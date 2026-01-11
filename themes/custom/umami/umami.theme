@@ -33,9 +33,10 @@ function umami_preprocess_html(&$variables): void {
  */
 function umami_preprocess_node(&$variables): void {
   $node = $variables['node'];
-  // Attach fractions library on recipe full display.
+  // Attach recipe libraries on recipe full display.
   if ($node->bundle() === 'recipe' && $variables['view_mode'] === 'full') {
     $variables['#attached']['library'][] = 'umami/fractions';
+    $variables['#attached']['library'][] = 'umami/recipe-scaling';
   }
 }
 

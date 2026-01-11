@@ -1,23 +1,9 @@
 {#
 /**
  * @file
- * Theme override for a field.
+ * Theme override for servings field with scaling controls.
  *
- * To override output, copy the "field.html.twig" from the templates directory
- * to your theme's directory and customize it, just like customizing other
- * Drupal templates such as page.html.twig or node.html.twig.
- *
- * Instead of overriding the theming for all fields, you can also just override
- * theming for a subset of fields using
- * @link themeable Theme hook suggestions. @endlink For example,
- * here are some theme hook suggestions that can be used for a field_foo field
- * on an article node type:
- * - field--node--field-foo--article.html.twig
- * - field--node--field-foo.html.twig
- * - field--node--article.html.twig
- * - field--field-foo.html.twig
- * - field--text-with-summary.html.twig
- * - field.html.twig
+ * Includes +/- buttons to scale recipe ingredients.
  *
  * Available variables:
  * - attributes: HTML attributes for the containing element.
@@ -32,7 +18,6 @@
  * - field_name: The name of the field.
  * - field_type: The type of the field.
  * - label_display: The display settings for the label.
- *
  *
  * @see \Drupal\Core\Field\FieldPreprocess::preprocessField()
  */
@@ -58,7 +43,13 @@
   {% endblock %}
   {% block text %}
     {% for item in items %}
-      <div{{ item.attributes.addClass('umami-badge__item') }}>{{ item.content }}</div>
+      {% set servings_value = item.content|render|striptags|trim %}
+      <div class="recipe-scaling" data-original-servings="{{ servings_value }}">
+        <button type="button" class="recipe-scaling__btn recipe-scaling__btn--decrease" aria-label="{{ 'Decrease servings'|t }}">−</button>
+        <span class="recipe-scaling__servings">{{ servings_value }}</span>
+        <button type="button" class="recipe-scaling__btn recipe-scaling__btn--increase" aria-label="{{ 'Increase servings'|t }}">+</button>
+        <button type="button" class="recipe-scaling__reset" aria-label="{{ 'Reset to original'|t }}">{{ 'Reset'|t }}</button>
+      </div>
     {% endfor %}
   {% endblock %}
 {% endembed %}

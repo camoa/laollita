@@ -1,0 +1,95 @@
+/**
+ * @file
+ * Styles for recipe scaling controls.
+ */
+
+.recipe-scaling {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.recipe-scaling__btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.5rem;
+  height: 2.5rem;
+  padding: 0;
+  border: 2px solid #008068;
+  border-radius: 50%;
+  background-color: #fff;
+  color: #008068;
+  font-size: 1.5rem;
+  font-weight: 700;
+  line-height: 1;
+  cursor: pointer;
+  transition: background-color 0.2s, color 0.2s;
+  -webkit-appearance: none;
+  appearance: none;
+}
+
+.recipe-scaling__btn:hover,
+.recipe-scaling__btn:focus {
+  background-color: #008068;
+  color: #fff;
+}
+
+.recipe-scaling__btn:disabled {
+  border-color: #ccc;
+  background-color: #f5f5f5;
+  color: #999;
+  cursor: not-allowed;
+}
+
+.recipe-scaling__btn:disabled:hover {
+  background-color: #f5f5f5;
+  color: #999;
+}
+
+.recipe-scaling__servings {
+  min-width: 2rem;
+  font-size: 1.25rem;
+  font-weight: 700;
+  text-align: center;
+}
+
+.recipe-scaling__reset {
+  margin-left: 0.5rem;
+  padding: 0.4rem 0.8rem;
+  border: 1px solid #008068;
+  border-radius: 4px;
+  background-color: transparent;
+  color: #008068;
+  font-size: 0.875rem;
+  cursor: pointer;
+  transition: background-color 0.2s, color 0.2s, opacity 0.2s;
+}
+
+.recipe-scaling__reset:hover,
+.recipe-scaling__reset:focus {
+  background-color: #008068;
+  color: #fff;
+}
+
+.recipe-scaling__reset--hidden {
+  opacity: 0;
+  pointer-events: none;
+}
+
+/* Larger touch targets for mobile/accessibility */
+@media (max-width: 768px) {
+  .recipe-scaling__btn {
+    width: 3rem;
+    height: 3rem;
+    font-size: 1.75rem;
+  }
+
+  .recipe-scaling__servings {
+    font-size: 1.5rem;
+  }
+
+  .recipe-scaling__reset {
+    padding: 0.5rem 1rem;
+  }
+}

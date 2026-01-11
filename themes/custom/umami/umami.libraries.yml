@@ -180,3 +180,14 @@ fractions:
   dependencies:
     - core/drupal
     - core/once
+
+recipe-scaling:
+  version: VERSION
+  js:
+    js/recipe-scaling.js: {}
+  css:
+    component:
+      css/components/fields/recipe-scaling.css: {}
+  dependencies:
+    - core/drupal
+    - core/once

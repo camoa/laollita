@@ -2,6 +2,7 @@
 /**
  * @file
  * Template for ingredient amount field - outputs with span.ingredient-amount class.
+ * Includes data-original attribute for recipe scaling functionality.
  */
 #}
-<span class="ingredient-amount">{{ value }}</span>
+<span class="ingredient-amount" data-original="{{ value }}">{{ value }}</span>
