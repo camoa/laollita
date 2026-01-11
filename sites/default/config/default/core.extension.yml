@@ -12,6 +12,7 @@ module:
   config_translation: 0
   content_moderation: 0
   contextual: 0
+  custom_field: 0
   datetime: 0
   dblog: 0
   demo_umami_content: 0
@@ -19,8 +20,10 @@ module:
   editor: 0
   field: 0
   field_ui: 0
+  field_validation: 0
   file: 0
   filter: 0
+  gin_toolbar: 0
   help: 0
   history: 0
   image: 0
@@ -51,8 +54,9 @@ module:
   workflows: 0
   content_translation: 10
   views: 10
-  demo_umami: 1000
+  standard: 1000
 theme:
   claro: 0
   umami: 0
-profile: demo_umami
+  gin: 0
+profile: standard

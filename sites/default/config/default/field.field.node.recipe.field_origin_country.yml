@@ -1,0 +1,29 @@
+uuid: e5f6a7b8-c9d0-1234-efa5-678901234567
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_origin_country
+    - node.type.recipe
+    - taxonomy.vocabulary.origin_country
+id: node.recipe.field_origin_country
+field_name: field_origin_country
+entity_type: node
+bundle: recipe
+label: 'Origin Country'
+description: 'The country where this recipe originates from.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      origin_country: origin_country
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

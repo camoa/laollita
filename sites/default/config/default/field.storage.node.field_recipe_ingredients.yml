@@ -1,0 +1,33 @@
+uuid: 22334455-6677-8899-aabb-ccddeeff0011
+langcode: en
+status: true
+dependencies:
+  module:
+    - custom_field
+    - node
+    - taxonomy
+id: node.field_recipe_ingredients
+field_name: field_recipe_ingredients
+entity_type: node
+type: custom
+settings:
+  columns:
+    amount:
+      name: amount
+      type: string
+      length: 20
+    unit:
+      name: unit
+      type: entity_reference
+      target_type: taxonomy_term
+    ingredient:
+      name: ingredient
+      type: string
+      length: 255
+module: custom_field
+locked: false
+cardinality: -1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

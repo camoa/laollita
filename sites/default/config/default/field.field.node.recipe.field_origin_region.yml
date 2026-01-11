@@ -1,0 +1,29 @@
+uuid: f6a7b8c9-d0e1-2345-fab6-789012345678
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_origin_region
+    - node.type.recipe
+    - taxonomy.vocabulary.origin_region
+id: node.recipe.field_origin_region
+field_name: field_origin_region
+entity_type: node
+bundle: recipe
+label: 'Origin Region'
+description: 'The region where this recipe originates from (e.g., Tuscany, Provence).'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      origin_region: origin_region
+    sort:
+      field: name
+      direction: asc
+    auto_create: true
+    auto_create_bundle: origin_region
+field_type: entity_reference

@@ -9,8 +9,11 @@ dependencies:
     - field.field.node.recipe.field_ingredients
     - field.field.node.recipe.field_media_image
     - field.field.node.recipe.field_number_of_servings
+    - field.field.node.recipe.field_origin_country
+    - field.field.node.recipe.field_origin_region
     - field.field.node.recipe.field_preparation_time
     - field.field.node.recipe.field_recipe_category
+    - field.field.node.recipe.field_recipe_ingredients
     - field.field.node.recipe.field_recipe_instruction
     - field.field.node.recipe.field_summary
     - field.field.node.recipe.field_tags
@@ -18,6 +21,7 @@ dependencies:
     - node.type.recipe
     - views.view.related_recipes
   module:
+    - custom_field
     - layout_builder
     - layout_discovery
     - options
@@ -204,15 +208,56 @@ third_party_settings:
             uuid: 6924bf2e-8baa-4081-803a-7a2d3b7d8e14
             region: first
             configuration:
-              id: 'field_block:node:recipe:field_ingredients'
+              id: 'field_block:node:recipe:field_recipe_ingredients'
               label_display: '0'
               context_mapping:
                 entity: layout_builder.entity
               formatter:
-                type: string
+                type: custom_inline
                 label: above
                 settings:
-                  link_to_entity: false
+                  fields:
+                    amount:
+                      weight: 0
+                      format_type: number_decimal
+                      wrappers:
+                        field_wrapper_tag: ''
+                        field_wrapper_classes: ''
+                        field_tag: span
+                        field_classes: ingredient-amount
+                        label_tag: ''
+                        label_classes: ''
+                      formatter_settings:
+                        decimal_separator: .
+                        prefix_suffix: false
+                        scale: 0
+                        thousand_separator: ''
+                    unit:
+                      weight: 1
+                      format_type: entity_reference_label
+                      wrappers:
+                        field_wrapper_tag: ''
+                        field_wrapper_classes: ''
+                        field_tag: span
+                        field_classes: ingredient-unit
+                        label_tag: ''
+                        label_classes: ''
+                      formatter_settings:
+                        link: false
+                    ingredient:
+                      weight: 2
+                      format_type: string
+                      wrappers:
+                        field_wrapper_tag: ''
+                        field_wrapper_classes: ''
+                        field_tag: span
+                        field_classes: ingredient-name
+                        label_tag: ''
+                        label_classes: ''
+                      formatter_settings: {  }
+                  show_labels: false
+                  label_separator: ': '
+                  item_separator: ' '
                 third_party_settings: {  }
             weight: 0
             additional: {  }
@@ -296,14 +341,6 @@ content:
     third_party_settings: {  }
     weight: 7
     region: content
-  field_ingredients:
-    type: string
-    label: above
-    settings:
-      link_to_entity: false
-    third_party_settings: {  }
-    weight: 8
-    region: content
   field_number_of_servings:
     type: number_integer
     label: inline
@@ -312,6 +349,22 @@ content:
       prefix_suffix: false
     third_party_settings: {  }
     weight: 6
+    region: content
+  field_origin_country:
+    type: entity_reference_label
+    label: inline
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 3
+    region: content
+  field_origin_region:
+    type: entity_reference_label
+    label: inline
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 4
     region: content
   field_preparation_time:
     type: number_integer
@@ -329,6 +382,53 @@ content:
       link: true
     third_party_settings: {  }
     weight: 1
+    region: content
+  field_recipe_ingredients:
+    type: custom_list
+    label: above
+    settings:
+      fields:
+        amount:
+          weight: 0
+          format_type: number_decimal
+          wrappers:
+            field_wrapper_tag: ''
+            field_wrapper_classes: ''
+            field_tag: span
+            field_classes: ingredient-amount
+            label_tag: ''
+            label_classes: ''
+          formatter_settings:
+            decimal_separator: .
+            prefix_suffix: false
+            scale: 2
+            thousand_separator: ''
+        unit:
+          weight: 1
+          format_type: entity_reference_label
+          wrappers:
+            field_wrapper_tag: ''
+            field_wrapper_classes: ''
+            field_tag: span
+            field_classes: ingredient-unit
+            label_tag: ''
+            label_classes: ''
+          formatter_settings:
+            link: false
+        ingredient:
+          weight: 2
+          format_type: string
+          wrappers:
+            field_wrapper_tag: ''
+            field_wrapper_classes: ''
+            field_tag: span
+            field_classes: ingredient-name
+            label_tag: ''
+            label_classes: ''
+          formatter_settings: {  }
+      list_type: ul
+    third_party_settings: {  }
+    weight: 8
     region: content
   field_recipe_instruction:
     type: text_default
@@ -353,6 +453,7 @@ content:
     weight: 2
     region: content
 hidden:
+  field_ingredients: true
   field_media_image: true
   langcode: true
   layout_builder__layout: true

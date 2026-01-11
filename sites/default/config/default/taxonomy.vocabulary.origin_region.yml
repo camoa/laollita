@@ -1,0 +1,9 @@
+uuid: b2c3d4e5-f6a7-8901-bcde-f23456789012
+langcode: en
+status: true
+dependencies: {  }
+name: 'Origin Region'
+vid: origin_region
+description: 'Region of origin for recipes (auto-create enabled).'
+weight: 0
+new_revision: false

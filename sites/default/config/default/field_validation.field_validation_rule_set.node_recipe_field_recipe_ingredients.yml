@@ -1,0 +1,22 @@
+uuid: aabbccdd-1122-3344-5566-778899aabbcc
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.recipe.field_recipe_ingredients
+id: node_recipe_field_recipe_ingredients
+name: 'Recipe Ingredients Validation'
+entity_type: node
+bundle: recipe
+fields:
+  - field_recipe_ingredients
+rules:
+  amount_format:
+    uuid: 11223344-5566-7788-99aa-bbccddeeff00
+    field_name: field_recipe_ingredients
+    column: amount
+    rule_id: regex_rule
+    title: 'Amount Format'
+    settings:
+      pattern: '^\d+(\.\d+)?(-\d+(\.\d+)?)?$'
+    error_message: 'Amount must be a number or range (e.g., 200, 1.5, or 400-500)'

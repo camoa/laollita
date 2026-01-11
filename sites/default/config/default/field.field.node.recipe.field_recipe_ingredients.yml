@@ -1,0 +1,54 @@
+uuid: 33445566-7788-99aa-bbcc-ddeeff001122
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_recipe_ingredients
+    - node.type.recipe
+    - taxonomy.vocabulary.units
+  module:
+    - custom_field
+id: node.recipe.field_recipe_ingredients
+field_name: field_recipe_ingredients
+entity_type: node
+bundle: recipe
+label: Ingredients
+description: 'Recipe ingredients with amount, unit, and name.'
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  add_more_label: 'Add ingredient'
+  field_settings:
+    amount:
+      label: Amount
+      check_empty: false
+      required: false
+      translatable: false
+      description: 'Enter a number or range (e.g., 200 or 400-500)'
+      description_display: after
+    unit:
+      label: Unit
+      check_empty: false
+      required: false
+      translatable: false
+      description: ''
+      description_display: after
+      handler: 'default:taxonomy_term'
+      handler_settings:
+        sort:
+          field: name
+          direction: asc
+        auto_create: true
+        target_bundles:
+          - units
+        auto_create_bundle: units
+    ingredient:
+      label: Ingredient
+      check_empty: true
+      required: true
+      translatable: true
+      description: ''
+      description_display: after
+field_type: custom

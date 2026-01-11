@@ -19,6 +19,8 @@
         "drupal/core-composer-scaffold": "^11.3",
         "drupal/core-recipe-unpack": "^11.3",
         "drupal/core-recommended": "^11.3",
+        "drupal/custom_field": "^4.0",
+        "drupal/field_validation": "^3.0@beta",
         "drupal/gin": "^5.0",
         "drupal/gin_toolbar": "^3.0",
         "drush/drush": "^13.7"

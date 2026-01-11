@@ -43,3 +43,4 @@ Thumbs.db
 # Drupal specific
 php.ini
 drush/*.local.yml
+/autoload.php

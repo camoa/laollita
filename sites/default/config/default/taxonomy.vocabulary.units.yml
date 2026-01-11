@@ -1,0 +1,9 @@
+uuid: 11223344-5566-7788-99aa-bbccddeeff00
+langcode: en
+status: true
+dependencies: {  }
+name: Units
+vid: units
+description: 'Measurement units for recipe ingredients (auto-create enabled).'
+weight: 0
+new_revision: false

@@ -1,0 +1,9 @@
+uuid: a1b2c3d4-e5f6-7890-abcd-ef1234567890
+langcode: en
+status: true
+dependencies: {  }
+name: 'Origin Country'
+vid: origin_country
+description: 'Country of origin for recipes.'
+weight: 0
+new_revision: false
