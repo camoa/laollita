@@ -1,0 +1,17 @@
+name: 'Recipe Demo Content'
+description: Imports demo recipe content (from Umami).
+type: module
+version: '1.0.0'
+package: Custom
+core_version_requirement: ^10.3 || ^11
+dependencies:
+  - drupal:field
+  - drupal:file
+  - drupal:image
+  - drupal:media
+  - drupal:node
+  - drupal:options
+  - drupal:path
+  - drupal:taxonomy
+  - drupal:text
+  - drupal:user

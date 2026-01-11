@@ -50,6 +50,7 @@ module:
   workflows: 0
   content_translation: 10
   views: 10
+  standard: 1000
 theme:
   claro: 0
   umami: 0
