@@ -1,0 +1,37 @@
+uuid: 55667788-99aa-bbcc-ddee-ff0011223344
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_cooking_notes
+    - node.type.recipe
+  module:
+    - custom_field
+id: node.recipe.field_cooking_notes
+field_name: field_cooking_notes
+entity_type: node
+bundle: recipe
+label: 'Cooking Notes'
+description: 'Notes from when you cooked this recipe - tips, modifications, results.'
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  add_more_label: 'Add note'
+  field_settings:
+    date:
+      label: Date
+      check_empty: false
+      required: false
+      translatable: false
+      description: ''
+      description_display: after
+    notes:
+      label: Notes
+      check_empty: true
+      required: true
+      translatable: true
+      description: ''
+      description_display: after
+field_type: custom

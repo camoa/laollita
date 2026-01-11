@@ -4,6 +4,7 @@ status: true
 dependencies:
   config:
     - core.entity_view_mode.node.full
+    - field.field.node.recipe.field_cooking_notes
     - field.field.node.recipe.field_cooking_time
     - field.field.node.recipe.field_difficulty
     - field.field.node.recipe.field_ingredients
@@ -280,6 +281,52 @@ third_party_settings:
       -
         layout_id: layout_onecol
         layout_settings:
+          label: 'Cooking Notes'
+        components:
+          a1b2c3d4-e5f6-7890-abcd-ef1234567890:
+            uuid: a1b2c3d4-e5f6-7890-abcd-ef1234567890
+            region: content
+            configuration:
+              id: 'field_block:node:recipe:field_cooking_notes'
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              formatter:
+                type: custom_list
+                label: above
+                settings:
+                  fields:
+                    date:
+                      weight: 0
+                      format_type: datetime
+                      wrappers:
+                        field_wrapper_tag: ''
+                        field_wrapper_classes: ''
+                        field_tag: span
+                        field_classes: cooking-note-date
+                        label_tag: ''
+                        label_classes: ''
+                      formatter_settings:
+                        date_format: medium
+                    notes:
+                      weight: 1
+                      format_type: basic_string
+                      wrappers:
+                        field_wrapper_tag: ''
+                        field_wrapper_classes: ''
+                        field_tag: div
+                        field_classes: cooking-note-text
+                        label_tag: ''
+                        label_classes: ''
+                      formatter_settings: {  }
+                  list_type: div
+                third_party_settings: {  }
+            weight: 0
+            additional: {  }
+        third_party_settings: {  }
+      -
+        layout_id: layout_onecol
+        layout_settings:
           label: ''
         components:
           d4b753a7-e1b1-4062-a1d0-a2666362693e:
@@ -322,6 +369,38 @@ mode: full
 content:
   content_moderation_control:
     settings: {  }
+    third_party_settings: {  }
+    weight: 10
+    region: content
+  field_cooking_notes:
+    type: custom_list
+    label: above
+    settings:
+      fields:
+        date:
+          weight: 0
+          format_type: datetime
+          wrappers:
+            field_wrapper_tag: ''
+            field_wrapper_classes: ''
+            field_tag: span
+            field_classes: cooking-note-date
+            label_tag: ''
+            label_classes: ''
+          formatter_settings:
+            date_format: medium
+        notes:
+          weight: 1
+          format_type: basic_string
+          wrappers:
+            field_wrapper_tag: ''
+            field_wrapper_classes: ''
+            field_tag: div
+            field_classes: cooking-note-text
+            label_tag: ''
+            label_classes: ''
+          formatter_settings: {  }
+      list_type: div
     third_party_settings: {  }
     weight: 10
     region: content

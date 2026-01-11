@@ -3,6 +3,7 @@ langcode: en
 status: true
 dependencies:
   config:
+    - field.field.node.recipe.field_cooking_notes
     - field.field.node.recipe.field_cooking_time
     - field.field.node.recipe.field_difficulty
     - field.field.node.recipe.field_ingredients
@@ -37,6 +38,33 @@ content:
     weight: 15
     region: content
     settings: {  }
+    third_party_settings: {  }
+  field_cooking_notes:
+    type: custom_flex
+    weight: 14
+    region: content
+    settings:
+      wrapper: fieldset
+      label_value: ''
+      label_limit: 0
+      label_prefix: ''
+      auto_collapse: false
+      open: true
+      fields:
+        date:
+          weight: 0
+          type: datepicker
+          label: Date
+        notes:
+          weight: 1
+          type: textarea
+          label: Notes
+          placeholder: 'Tips, modifications, results...'
+          rows: 3
+      columns:
+        - auto
+        - 1fr
+      breakpoint: small
     third_party_settings: {  }
   field_cooking_time:
     type: number

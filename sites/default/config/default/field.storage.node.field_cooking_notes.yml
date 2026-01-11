@@ -1,0 +1,27 @@
+uuid: 44556677-8899-aabb-ccdd-eeff00112233
+langcode: en
+status: true
+dependencies:
+  module:
+    - custom_field
+    - node
+id: node.field_cooking_notes
+field_name: field_cooking_notes
+entity_type: node
+type: custom
+settings:
+  columns:
+    date:
+      name: date
+      type: datetime
+      datetime_type: date
+    notes:
+      name: notes
+      type: string_long
+module: custom_field
+locked: false
+cardinality: -1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false
