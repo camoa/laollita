@@ -170,12 +170,12 @@ content:
       placeholder: ''
     third_party_settings: {  }
   field_source:
-    type: link_default
+    type: string_textfield
     weight: 15
     region: content
     settings:
-      placeholder_url: 'https://example.com/recipe'
-      placeholder_title: 'e.g., Grandma Maria, Cook''s Illustrated'
+      size: 60
+      placeholder: 'e.g., Grandma Maria, Joy of Cooking p.45'
     third_party_settings: {  }
   field_summary:
     type: text_textarea

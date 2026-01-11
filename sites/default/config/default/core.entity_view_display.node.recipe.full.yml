@@ -130,14 +130,10 @@ third_party_settings:
               context_mapping:
                 entity: layout_builder.entity
               formatter:
-                type: link
+                type: string
                 label: inline
                 settings:
-                  trim_length: 80
-                  url_only: false
-                  url_plain: false
-                  rel: ''
-                  target: ''
+                  link_to_entity: false
                 third_party_settings: {  }
             weight: 5
             additional: {  }
@@ -568,14 +564,10 @@ content:
     weight: 9
     region: content
   field_source:
-    type: link
+    type: string
     label: inline
     settings:
-      trim_length: 80
-      url_only: false
-      url_plain: false
-      rel: ''
-      target: ''
+      link_to_entity: false
     third_party_settings: {  }
     weight: 11
     region: content
