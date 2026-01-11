@@ -1,0 +1,23 @@
+uuid: 77889900-aabb-ccdd-eeff-112233445566
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_source
+    - node.type.recipe
+  module:
+    - link
+id: node.recipe.field_source
+field_name: field_source
+entity_type: node
+bundle: recipe
+label: Source
+description: 'Attribution or source of this recipe (e.g., family member, cookbook, website).'
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  title: 1
+  link_type: 16
+field_type: link

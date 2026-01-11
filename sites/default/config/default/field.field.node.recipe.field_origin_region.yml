@@ -10,7 +10,7 @@ id: node.recipe.field_origin_region
 field_name: field_origin_region
 entity_type: node
 bundle: recipe
-label: 'Origin Region'
+label: Region
 description: 'The region where this recipe originates from (e.g., Tuscany, Provence).'
 required: false
 translatable: false

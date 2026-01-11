@@ -10,7 +10,7 @@ id: node.recipe.field_origin_country
 field_name: field_origin_country
 entity_type: node
 bundle: recipe
-label: 'Origin Country'
+label: Country
 description: 'The country where this recipe originates from.'
 required: false
 translatable: false

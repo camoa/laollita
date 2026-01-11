@@ -1,0 +1,27 @@
+/**
+ * @file
+ * Styles for recipe origin fields (country and region).
+ */
+
+.field--name-field-origin-country,
+.field--name-field-origin-region {
+  margin-bottom: 1.2em;
+}
+
+.field--name-field-origin-country.field--label-inline,
+.field--name-field-origin-region.field--label-inline {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+}
+
+.field--name-field-origin-country .field__label,
+.field--name-field-origin-region .field__label {
+  padding-right: 0.6rem;
+  font-weight: 700;
+}
+
+.field--name-field-origin-country .field__item,
+.field--name-field-origin-region .field__item {
+  padding-right: 0.6rem;
+}

@@ -29,6 +29,17 @@ function umami_preprocess_html(&$variables): void {
 }
 
 /**
+ * Implements hook_preprocess_HOOK() for node.
+ */
+function umami_preprocess_node(&$variables): void {
+  $node = $variables['node'];
+  // Attach fractions library on recipe full display.
+  if ($node->bundle() === 'recipe' && $variables['view_mode'] === 'full') {
+    $variables['#attached']['library'][] = 'umami/fractions';
+  }
+}
+
+/**
  * Implements hook_preprocess_HOOK() for field.
  */
 function umami_preprocess_field(&$variables, $hook): void {

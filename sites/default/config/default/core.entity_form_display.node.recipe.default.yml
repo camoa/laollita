@@ -15,6 +15,7 @@ dependencies:
     - field.field.node.recipe.field_recipe_category
     - field.field.node.recipe.field_recipe_ingredients
     - field.field.node.recipe.field_recipe_instruction
+    - field.field.node.recipe.field_source
     - field.field.node.recipe.field_summary
     - field.field.node.recipe.field_tags
     - field.field.node.recipe.layout_builder__layout
@@ -167,6 +168,14 @@ content:
     settings:
       rows: 5
       placeholder: ''
+    third_party_settings: {  }
+  field_source:
+    type: link_default
+    weight: 15
+    region: content
+    settings:
+      placeholder_url: 'https://example.com/recipe'
+      placeholder_title: 'e.g., Grandma Maria, Cook''s Illustrated'
     third_party_settings: {  }
   field_summary:
     type: text_textarea

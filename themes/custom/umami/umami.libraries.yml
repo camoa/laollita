@@ -17,6 +17,8 @@ global:
       css/components/content-types/recipe/recipe.css: {}
       css/components/fields/field.css: {}
       css/components/fields/ingredients.css: {}
+      css/components/fields/cooking-notes.css: {}
+      css/components/fields/origin.css: {}
       css/components/fields/label-items.css: {}
       css/components/fields/recipe-instruction.css: {}
       css/components/fields/summary.css: {}
@@ -170,3 +172,11 @@ drupal.node.preview:
   css:
     theme:
       css/components/content/node-preview.css: {}
+
+fractions:
+  version: VERSION
+  js:
+    js/fractions.js: {}
+  dependencies:
+    - core/drupal
+    - core/once

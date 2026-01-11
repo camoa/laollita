@@ -16,6 +16,7 @@ dependencies:
     - field.field.node.recipe.field_recipe_category
     - field.field.node.recipe.field_recipe_ingredients
     - field.field.node.recipe.field_recipe_instruction
+    - field.field.node.recipe.field_source
     - field.field.node.recipe.field_summary
     - field.field.node.recipe.field_tags
     - field.field.node.recipe.layout_builder__layout
@@ -55,7 +56,7 @@ third_party_settings:
                 settings:
                   link: true
                 third_party_settings: {  }
-            weight: 5
+            weight: 6
             additional: {  }
           0eff9e1d-4e73-4748-b910-e5568df1d5aa:
             uuid: 0eff9e1d-4e73-4748-b910-e5568df1d5aa
@@ -85,7 +86,7 @@ third_party_settings:
                 type: entity_reference_label
                 label: inline
                 settings:
-                  link: false
+                  link: true
                 third_party_settings: {  }
             weight: 3
             additional: {  }
@@ -101,7 +102,7 @@ third_party_settings:
                 type: entity_reference_label
                 label: inline
                 settings:
-                  link: false
+                  link: true
                 third_party_settings: {  }
             weight: 4
             additional: {  }
@@ -118,7 +119,27 @@ third_party_settings:
                 label: hidden
                 settings: {  }
                 third_party_settings: {  }
-            weight: 6
+            weight: 7
+            additional: {  }
+          d5e6f7a8-b9c0-1234-5678-90abcdef1234:
+            uuid: d5e6f7a8-b9c0-1234-5678-90abcdef1234
+            region: content
+            configuration:
+              id: 'field_block:node:recipe:field_source'
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              formatter:
+                type: link
+                label: inline
+                settings:
+                  trim_length: 80
+                  url_only: false
+                  url_plain: false
+                  rel: ''
+                  target: ''
+                third_party_settings: {  }
+            weight: 5
             additional: {  }
         third_party_settings: {  }
       -
@@ -309,22 +330,16 @@ third_party_settings:
                 third_party_settings: {  }
             weight: 0
             additional: {  }
-        third_party_settings: {  }
-      -
-        layout_id: layout_onecol
-        layout_settings:
-          label: 'Cooking Notes'
-        components:
           a1b2c3d4-e5f6-7890-abcd-ef1234567890:
             uuid: a1b2c3d4-e5f6-7890-abcd-ef1234567890
-            region: content
+            region: second
             configuration:
               id: 'field_block:node:recipe:field_cooking_notes'
               label_display: '0'
               context_mapping:
                 entity: layout_builder.entity
               formatter:
-                type: custom_list
+                type: custom_inline
                 label: above
                 settings:
                   fields:
@@ -346,14 +361,16 @@ third_party_settings:
                       wrappers:
                         field_wrapper_tag: ''
                         field_wrapper_classes: ''
-                        field_tag: div
+                        field_tag: span
                         field_classes: cooking-note-text
                         label_tag: ''
                         label_classes: ''
                       formatter_settings: {  }
-                  list_type: div
+                  show_labels: false
+                  label_separator: ': '
+                  item_separator: ' - '
                 third_party_settings: {  }
-            weight: 0
+            weight: 1
             additional: {  }
         third_party_settings: {  }
       -
@@ -405,7 +422,7 @@ content:
     weight: 10
     region: content
   field_cooking_notes:
-    type: custom_list
+    type: custom_inline
     label: above
     settings:
       fields:
@@ -427,12 +444,14 @@ content:
           wrappers:
             field_wrapper_tag: ''
             field_wrapper_classes: ''
-            field_tag: div
+            field_tag: span
             field_classes: cooking-note-text
             label_tag: ''
             label_classes: ''
           formatter_settings: {  }
-      list_type: div
+      show_labels: false
+      label_separator: ': '
+      item_separator: ' - '
     third_party_settings: {  }
     weight: 10
     region: content
@@ -547,6 +566,18 @@ content:
     settings: {  }
     third_party_settings: {  }
     weight: 9
+    region: content
+  field_source:
+    type: link
+    label: inline
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    weight: 11
     region: content
   field_summary:
     type: text_default
