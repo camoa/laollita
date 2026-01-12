@@ -1,0 +1,110 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Recetas Import Schema",
+  "description": "JSON schema for importing family recipes into the Recetas Drupal site",
+  "type": "object",
+  "required": ["recipes"],
+  "properties": {
+    "recipes": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["id", "langcode", "title", "ingredients", "instructions"],
+        "properties": {
+          "id": {
+            "type": "string",
+            "description": "Unique identifier for the recipe (e.g., 'carbonara-001', 'paella-valenciana')",
+            "pattern": "^[a-z0-9-]+$"
+          },
+          "langcode": {
+            "type": "string",
+            "description": "Language code of the original recipe content",
+            "enum": ["en", "es", "fr", "it"]
+          },
+          "title": {
+            "type": "string",
+            "description": "Recipe title IN THE ORIGINAL LANGUAGE"
+          },
+          "description": {
+            "type": "string",
+            "description": "Short summary/description IN THE ORIGINAL LANGUAGE"
+          },
+          "prepTime": {
+            "type": "integer",
+            "description": "Preparation time in minutes",
+            "minimum": 0
+          },
+          "cookTime": {
+            "type": "integer",
+            "description": "Cooking time in minutes",
+            "minimum": 0
+          },
+          "servings": {
+            "type": "integer",
+            "description": "Number of servings/portions",
+            "minimum": 1
+          },
+          "difficulty": {
+            "type": "string",
+            "description": "Difficulty level (English machine name)",
+            "enum": ["easy", "medium", "hard"]
+          },
+          "ingredients": {
+            "type": "array",
+            "description": "List of ingredients",
+            "items": {
+              "type": "object",
+              "required": ["ingredient"],
+              "properties": {
+                "amount": {
+                  "type": "string",
+                  "description": "Quantity as string (supports ranges like '400-500', fractions like '1/2')"
+                },
+                "unit": {
+                  "type": "string",
+                  "description": "Unit abbreviation (universal)",
+                  "enum": ["", "g", "kg", "ml", "l", "dl", "cl", "oz", "lb", "cup", "tbsp", "tsp", "piece", "pinch", "bunch", "clove", "slice", "can", "packet", "jar"]
+                },
+                "ingredient": {
+                  "type": "string",
+                  "description": "Ingredient name IN THE ORIGINAL LANGUAGE"
+                }
+              }
+            }
+          },
+          "instructions": {
+            "type": "string",
+            "description": "Step-by-step cooking instructions IN THE ORIGINAL LANGUAGE"
+          },
+          "category": {
+            "type": "string",
+            "description": "Recipe category IN ENGLISH",
+            "examples": ["Appetizer", "Main Course", "Side Dish", "Dessert", "Breakfast", "Soup", "Salad", "Bread", "Beverage", "Sauce", "Snack"]
+          },
+          "tags": {
+            "type": "array",
+            "description": "Recipe tags IN ENGLISH (lowercase)",
+            "items": {
+              "type": "string"
+            },
+            "examples": [["pasta", "quick", "vegetarian"], ["meat", "traditional", "sunday"]]
+          },
+          "source": {
+            "type": "string",
+            "description": "Attribution/source in original form (e.g., 'Nonna Maria', 'Abuela Carmen')"
+          },
+          "origin_country": {
+            "type": "string",
+            "description": "Country of origin IN ENGLISH",
+            "examples": ["Italy", "Spain", "France", "Mexico", "United States"]
+          },
+          "origin_region": {
+            "type": "string",
+            "description": "Region of origin IN ENGLISH",
+            "examples": ["Tuscany", "Lazio", "Valencia", "Catalonia", "Provence", "Normandy"]
+          }
+        }
+      }
+    }
+  }
+}

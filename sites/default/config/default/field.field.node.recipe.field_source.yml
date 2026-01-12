@@ -12,7 +12,7 @@ bundle: recipe
 label: Source
 description: 'Attribution or source of this recipe (e.g., Grandma Maria, Joy of Cooking p.45, website URL).'
 required: false
-translatable: true
+translatable: false
 default_value: {  }
 default_value_callback: ''
 settings: {  }

@@ -25,6 +25,10 @@
         "drupal/field_validation": "^3.0@beta",
         "drupal/gin": "^5.0",
         "drupal/gin_toolbar": "^3.0",
+        "drupal/migrate_plus": "^6.0",
+        "drupal/migrate_tools": "^6.1",
+        "drupal/pathauto": "^1.14",
+        "drupal/redirect": "^1.12",
         "drupal/smart_date": "^4.2",
         "drush/drush": "^13.7"
     },

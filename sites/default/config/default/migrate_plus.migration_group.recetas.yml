@@ -1,0 +1,10 @@
+uuid: 53a4a048-6e70-441c-8d86-71a80cdf55a5
+langcode: en
+status: true
+dependencies: {  }
+id: recetas
+label: 'Recetas Family Recipes'
+description: 'Migrations for importing family recipes from JSON files.'
+source_type: 'JSON files'
+module: null
+shared_configuration: null

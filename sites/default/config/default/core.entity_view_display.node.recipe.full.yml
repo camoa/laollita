@@ -48,6 +48,7 @@ third_party_settings:
             configuration:
               id: 'field_block:node:recipe:field_tags'
               label_display: '0'
+              provider: layout_builder
               context_mapping:
                 entity: layout_builder.entity
               formatter:
@@ -64,6 +65,7 @@ third_party_settings:
             configuration:
               id: 'field_block:node:recipe:field_recipe_category'
               label_display: '0'
+              provider: layout_builder
               context_mapping:
                 entity: layout_builder.entity
               formatter:
@@ -80,6 +82,7 @@ third_party_settings:
             configuration:
               id: 'field_block:node:recipe:field_origin_country'
               label_display: '0'
+              provider: layout_builder
               context_mapping:
                 entity: layout_builder.entity
               formatter:
@@ -96,6 +99,7 @@ third_party_settings:
             configuration:
               id: 'field_block:node:recipe:field_origin_region'
               label_display: '0'
+              provider: layout_builder
               context_mapping:
                 entity: layout_builder.entity
               formatter:
@@ -111,6 +115,7 @@ third_party_settings:
             region: content
             configuration:
               id: 'field_block:node:recipe:field_summary'
+              provider: layout_builder
               label_display: '0'
               context_mapping:
                 entity: layout_builder.entity
@@ -126,6 +131,7 @@ third_party_settings:
             region: content
             configuration:
               id: 'field_block:node:recipe:field_source'
+              provider: layout_builder
               label_display: '0'
               context_mapping:
                 entity: layout_builder.entity
@@ -167,6 +173,7 @@ third_party_settings:
             region: fifth
             configuration:
               id: 'field_block:node:recipe:field_difficulty'
+              provider: layout_builder
               label_display: '0'
               context_mapping:
                 entity: layout_builder.entity
@@ -182,6 +189,7 @@ third_party_settings:
             region: fourth
             configuration:
               id: 'field_block:node:recipe:field_number_of_servings'
+              provider: layout_builder
               label_display: '0'
               context_mapping:
                 entity: layout_builder.entity
@@ -199,6 +207,7 @@ third_party_settings:
             region: third
             configuration:
               id: 'field_block:node:recipe:field_cooking_time'
+              provider: layout_builder
               label_display: '0'
               context_mapping:
                 entity: layout_builder.entity
@@ -216,6 +225,7 @@ third_party_settings:
             region: second
             configuration:
               id: 'field_block:node:recipe:field_preparation_time'
+              provider: layout_builder
               label_display: '0'
               context_mapping:
                 entity: layout_builder.entity
@@ -259,6 +269,7 @@ third_party_settings:
             region: first
             configuration:
               id: 'field_block:node:recipe:field_recipe_ingredients'
+              provider: layout_builder
               label_display: '0'
               context_mapping:
                 entity: layout_builder.entity
@@ -316,6 +327,7 @@ third_party_settings:
             region: second
             configuration:
               id: 'field_block:node:recipe:field_recipe_instruction'
+              provider: layout_builder
               label_display: '0'
               context_mapping:
                 entity: layout_builder.entity
@@ -331,6 +343,7 @@ third_party_settings:
             region: second
             configuration:
               id: 'field_block:node:recipe:field_cooking_notes'
+              provider: layout_builder
               label_display: '0'
               context_mapping:
                 entity: layout_builder.entity
@@ -379,6 +392,7 @@ third_party_settings:
             region: content
             configuration:
               id: 'extra_field_block:node:recipe:content_moderation_control'
+              provider: layout_builder
               label_display: '0'
               context_mapping:
                 entity: layout_builder.entity

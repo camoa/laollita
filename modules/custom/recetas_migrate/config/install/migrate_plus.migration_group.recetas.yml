@@ -1,0 +1,4 @@
+id: recetas
+label: 'Recetas Family Recipes'
+description: 'Migrations for importing family recipes from JSON files.'
+source_type: 'JSON files'

@@ -1,0 +1,77 @@
+{
+  "recipes": [
+    {
+      "id": "pasta-carbonara",
+      "langcode": "it",
+      "title": "Pasta alla Carbonara",
+      "description": "La vera carbonara romana con guanciale e pecorino. Una ricetta tradizionale che non prevede panna!",
+      "prepTime": 15,
+      "cookTime": 20,
+      "servings": 4,
+      "difficulty": "medium",
+      "ingredients": [
+        {"amount": "400", "unit": "g", "ingredient": "spaghetti"},
+        {"amount": "200", "unit": "g", "ingredient": "guanciale"},
+        {"amount": "4", "unit": "piece", "ingredient": "tuorli d'uovo"},
+        {"amount": "100", "unit": "g", "ingredient": "pecorino romano grattugiato"},
+        {"amount": "", "unit": "pinch", "ingredient": "pepe nero macinato fresco"}
+      ],
+      "instructions": "1. Portare a ebollizione abbondante acqua salata e cuocere gli spaghetti al dente.\n\n2. Nel frattempo, tagliare il guanciale a listarelle e farlo rosolare in padella senza aggiungere olio (il grasso del guanciale è sufficiente).\n\n3. In una ciotola, sbattere i tuorli con il pecorino grattugiato e una generosa macinata di pepe nero.\n\n4. Quando la pasta è cotta, scolarla conservando un po' di acqua di cottura.\n\n5. Versare la pasta nella padella con il guanciale (fuoco spento!) e mescolare.\n\n6. Aggiungere il composto di uova e pecorino, mescolando velocemente. Se necessario, aggiungere un po' di acqua di cottura per ottenere una crema.\n\n7. Servire immediatamente con altro pecorino e pepe a piacere.",
+      "category": "Main Course",
+      "tags": ["pasta", "traditional", "roman", "quick", "eggs", "cheese"],
+      "source": "Nonna Maria",
+      "origin_country": "Italy",
+      "origin_region": "Lazio"
+    },
+    {
+      "id": "risotto-milanese",
+      "langcode": "it",
+      "title": "Risotto alla Milanese",
+      "description": "Il classico risotto giallo con zafferano, simbolo della cucina lombarda.",
+      "prepTime": 10,
+      "cookTime": 25,
+      "servings": 4,
+      "difficulty": "medium",
+      "ingredients": [
+        {"amount": "320", "unit": "g", "ingredient": "riso carnaroli"},
+        {"amount": "1", "unit": "l", "ingredient": "brodo di carne"},
+        {"amount": "1", "unit": "piece", "ingredient": "cipolla piccola"},
+        {"amount": "50", "unit": "g", "ingredient": "burro"},
+        {"amount": "1/2", "unit": "cup", "ingredient": "vino bianco secco"},
+        {"amount": "0.5", "unit": "g", "ingredient": "zafferano in pistilli"},
+        {"amount": "50", "unit": "g", "ingredient": "parmigiano reggiano grattugiato"},
+        {"amount": "", "unit": "pinch", "ingredient": "sale"}
+      ],
+      "instructions": "1. Scaldare il brodo e tenerlo caldo.\n\n2. Tritare finemente la cipolla e farla appassire con metà del burro.\n\n3. Aggiungere il riso e tostarlo per 2 minuti mescolando.\n\n4. Sfumare con il vino bianco.\n\n5. Aggiungere il brodo un mestolo alla volta, mescolando spesso.\n\n6. A metà cottura, sciogliere lo zafferano in un po' di brodo caldo e aggiungerlo al risotto.\n\n7. Quando il riso è al dente (circa 18 minuti), togliere dal fuoco.\n\n8. Mantecare con il burro rimasto e il parmigiano.\n\n9. Lasciar riposare 2 minuti e servire.",
+      "category": "Main Course",
+      "tags": ["rice", "traditional", "milanese", "saffron", "elegant"],
+      "source": "Zia Lucia",
+      "origin_country": "Italy",
+      "origin_region": "Lombardy"
+    },
+    {
+      "id": "tiramisu-classico",
+      "langcode": "it",
+      "title": "Tiramisù Classico",
+      "description": "Il dolce italiano più famoso al mondo. Cremoso, con caffè e mascarpone.",
+      "prepTime": 30,
+      "cookTime": 0,
+      "servings": 8,
+      "difficulty": "easy",
+      "ingredients": [
+        {"amount": "500", "unit": "g", "ingredient": "mascarpone"},
+        {"amount": "4", "unit": "piece", "ingredient": "uova"},
+        {"amount": "100", "unit": "g", "ingredient": "zucchero"},
+        {"amount": "300", "unit": "g", "ingredient": "savoiardi"},
+        {"amount": "300", "unit": "ml", "ingredient": "caffè espresso freddo"},
+        {"amount": "2", "unit": "tbsp", "ingredient": "cacao amaro in polvere"}
+      ],
+      "instructions": "1. Preparare il caffè espresso e lasciarlo raffreddare completamente.\n\n2. Separare i tuorli dagli albumi.\n\n3. Montare i tuorli con lo zucchero fino a ottenere un composto chiaro e spumoso.\n\n4. Aggiungere il mascarpone e mescolare delicatamente.\n\n5. Montare gli albumi a neve ferma e incorporarli al composto.\n\n6. Inzuppare rapidamente i savoiardi nel caffè freddo.\n\n7. Disporre uno strato di savoiardi in una pirofila, coprire con la crema.\n\n8. Ripetere con un secondo strato.\n\n9. Spolverare con cacao amaro.\n\n10. Refrigerare per almeno 4 ore, meglio una notte.",
+      "category": "Dessert",
+      "tags": ["dessert", "coffee", "no-bake", "traditional", "mascarpone"],
+      "source": "Nonna Maria",
+      "origin_country": "Italy",
+      "origin_region": "Veneto"
+    }
+  ]
+}

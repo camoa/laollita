@@ -1,0 +1,12 @@
+_core:
+  default_config_hash: RGedRkFydKZjS0ZJ6vbtZH00KbhYVGsK-ABILHdQLyw
+prompt_logging: false
+prompt_logging_tags: ''
+default_providers:
+  chat:
+    provider_id: anthropic
+    model_id: claude-sonnet-4-5-20250929
+  translate_text:
+    provider_id: chat_translation
+    model_id: claude-sonnet-4-5-20250929
+default_vdb_provider: ''
