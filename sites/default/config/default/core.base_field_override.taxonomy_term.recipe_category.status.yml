@@ -1,0 +1,22 @@
+uuid: a2c350b9-a859-4872-89ec-ca7797b6fd39
+langcode: en
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.recipe_category
+id: taxonomy_term.recipe_category.status
+field_name: status
+entity_type: taxonomy_term
+bundle: recipe_category
+label: Published
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 1
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

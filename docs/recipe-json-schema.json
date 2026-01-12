@@ -18,8 +18,8 @@
           },
           "langcode": {
             "type": "string",
-            "description": "Language code of the original recipe content",
-            "enum": ["en", "es", "fr", "it"]
+            "description": "Language code of the original recipe content (ISO 639-1)",
+            "examples": ["en", "es", "fr", "it", "pt", "de"]
           },
           "title": {
             "type": "string",
@@ -62,8 +62,8 @@
                 },
                 "unit": {
                   "type": "string",
-                  "description": "Unit abbreviation (universal)",
-                  "enum": ["", "g", "kg", "ml", "l", "dl", "cl", "oz", "lb", "cup", "tbsp", "tsp", "piece", "pinch", "bunch", "clove", "slice", "can", "packet", "jar"]
+                  "description": "Unit abbreviation - any value accepted, new units created automatically",
+                  "examples": ["g", "kg", "ml", "l", "cup", "tbsp", "tsp", "piece", "pinch", "bunch", "clove", "slice", ""]
                 },
                 "ingredient": {
                   "type": "string",
@@ -74,7 +74,7 @@
           },
           "instructions": {
             "type": "string",
-            "description": "Step-by-step cooking instructions IN THE ORIGINAL LANGUAGE"
+            "description": "Step-by-step cooking instructions IN THE ORIGINAL LANGUAGE, formatted as HTML: <ol><li>Step 1</li><li>Step 2</li></ol>"
           },
           "category": {
             "type": "string",

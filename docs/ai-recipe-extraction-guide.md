@@ -29,7 +29,7 @@ Generate a JSON file with this structure:
 | `langcode` | string | Language of the original recipe: `en`, `es`, `fr`, or `it` |
 | `title` | string | Recipe title **in original language** |
 | `ingredients` | array | List of ingredients (see below) |
-| `instructions` | string | Cooking steps **in original language** |
+| `instructions` | string | Cooking steps **in original language**, formatted as HTML `<ol><li>...</li></ol>` |
 
 ### Optional Fields
 
@@ -53,7 +53,7 @@ Generate a JSON file with this structure:
 ### Keep in ORIGINAL language:
 - `title` - "Pasta alla Carbonara" (not "Carbonara Pasta")
 - `description` - "La vera carbonara romana..."
-- `instructions` - "Cuocere la pasta in acqua salata..."
+- `instructions` - HTML formatted: `<ol><li>Cuocere la pasta...</li></ol>`
 - `ingredients[].ingredient` - "guanciale", "pecorino romano"
 - `source` - "Nonna Maria", "Abuela Carmen"
 
@@ -76,25 +76,16 @@ Generate a JSON file with this structure:
 | `hard` | Advanced techniques, many steps, precision needed |
 
 ### `category` (use English)
-- `Appetizer` - Starters, antipasti, tapas, hors d'oeuvres
-- `Main Course` - Primi piatti, platos principales, main dishes
-- `Side Dish` - Contorni, accompaniments, vegetables
-- `Dessert` - Dolci, postres, sweets
-- `Breakfast` - Morning meals, brunch items
-- `Soup` - Zuppe, sopas, potages
-- `Salad` - Insalate, ensaladas
-- `Bread` - Pane, pan, baked goods
-- `Beverage` - Drinks, cocktails
-- `Sauce` - Salse, salsas, condiments
-- `Snack` - Light bites, meriendas
+Any category value is accepted - new categories are created automatically.
+Examples: `Appetizer`, `Main Course`, `Dessert`, `Soup`, `Salad`, `Bread`, `Beverage`, `Sauce`, `Snack`, `Street Food`, `Stew`, `Casserole`, etc.
 
 ### `origin_country` (use English)
-- `Italy`, `Spain`, `France`, `Mexico`, `United States`, `Argentina`, `Portugal`, `Greece`, etc.
+Any country value is accepted - new countries are created automatically.
+Examples: `Italy`, `Spain`, `France`, `Colombia`, `Mexico`, `Costa Rica`, `Argentina`, `Peru`, etc.
 
 ### `origin_region` (use English)
-**Italy:** Tuscany, Lazio, Lombardy, Sicily, Emilia-Romagna, Campania, Piedmont, Veneto, Liguria, Sardinia
-**Spain:** Valencia, Catalonia, Andalusia, Basque Country, Galicia, Castile, Madrid, Aragon
-**France:** Provence, Normandy, Burgundy, Brittany, Alsace, Loire Valley, Bordeaux, Lyon
+Any region value is accepted - new regions are created automatically.
+Use the English name for the region. Examples: `Tuscany`, `Valencia`, `Antioquia`, `Oaxaca`, `Provence`, etc.
 
 ### `unit` (universal abbreviations)
 | Unit | Use for |
@@ -121,13 +112,9 @@ Generate a JSON file with this structure:
 | `` (empty) | When no unit applies |
 
 ### `tags` (English, lowercase)
-**Cooking method:** baked, fried, grilled, roasted, steamed, raw, slow-cooked
-**Diet:** vegetarian, vegan, gluten-free, dairy-free, low-carb, keto
-**Occasion:** sunday, holiday, christmas, easter, summer, winter
-**Time:** quick, 30-minute, weeknight, meal-prep
-**Style:** traditional, modern, fusion, comfort-food, healthy
-**Main ingredient:** pasta, rice, meat, fish, seafood, chicken, pork, beef, vegetables, eggs, cheese
-**Cuisine:** italian, spanish, french, mexican, mediterranean
+Any tag values are accepted - new tags are created automatically.
+Use lowercase, hyphenated for multi-word tags.
+Examples: `traditional`, `quick`, `vegetarian`, `comfort-food`, `grilled`, `christmas`, `seafood`, `gluten-free`, etc.
 
 ---
 
@@ -208,7 +195,7 @@ Fonte: Nonna Maria, Roma
         {"amount": "100", "unit": "g", "ingredient": "pecorino romano grattugiato"},
         {"amount": "", "unit": "pinch", "ingredient": "pepe nero"}
       ],
-      "instructions": "1. Cuocere la pasta in abbondante acqua salata.\n2. Nel frattempo, tagliare il guanciale a listarelle...",
+      "instructions": "<ol><li>Cuocere la pasta in abbondante acqua salata.</li><li>Nel frattempo, tagliare il guanciale a listarelle e rosolare in padella.</li><li>In una ciotola, sbattere i tuorli con il pecorino grattugiato.</li><li>Scolare la pasta e unirla al guanciale, poi aggiungere il composto di uova e pecorino.</li><li>Mescolare velocemente e servire con pepe nero macinato.</li></ol>",
       "category": "Main Course",
       "tags": ["pasta", "traditional", "roman", "quick"],
       "source": "Nonna Maria",
@@ -231,6 +218,8 @@ Fonte: Nonna Maria, Roma
 6. **Generate meaningful ID** - Use recipe name, lowercase, hyphens
 7. **Preserve source attribution** - Keep names in original form
 8. **Research region if unclear** - Match dishes to their traditional regions
+9. **Format instructions as HTML** - Use `<ol><li>Step</li></ol>` for proper display
+10. **Extract ONLY the recipe** - Do not include adjacent content, footnotes, or other recipes
 
 ---
 
