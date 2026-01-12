@@ -15,9 +15,6 @@ source:
   data_parser_plugin: json
   urls:
     - 'public://import/recipes.json'
-    - 'public://import/recipes-italian.json'
-    - 'public://import/recipes-spanish.json'
-    - 'public://import/recipes-french.json'
   item_selector: /recipes
   fields:
     -
@@ -141,6 +138,12 @@ process:
         value_key: name
         source: unit
       ingredient: ingredient
+  status:
+    plugin: default_value
+    default_value: 1
+  moderation_state:
+    plugin: default_value
+    default_value: published
 destination:
   plugin: 'entity:node'
   default_bundle: recipe
