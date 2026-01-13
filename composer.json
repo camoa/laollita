@@ -35,7 +35,8 @@
         "drupal/search_api_block": "^1.2",
         "drupal/search_api_db": "^1.40",
         "drupal/smart_date": "^4.2",
-        "drush/drush": "^13.7"
+        "drush/drush": "^13.7",
+        "symfony/cache": "^6.4"
     },
     "conflict": {
         "drupal/drupal": "*"
