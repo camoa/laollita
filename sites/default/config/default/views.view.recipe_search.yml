@@ -6,6 +6,7 @@ dependencies:
     - search_api.index.recipes
   module:
     - search_api
+    - user
 id: recipe_search
 label: 'Recipe Search'
 module: views
@@ -213,17 +214,17 @@ display:
           value: '1'
           group: 1
           exposed: false
-        langcode:
-          id: langcode
+        search_api_language:
+          id: search_api_language
           table: search_api_index_recipes
-          field: langcode
+          field: search_api_language
           relationship: none
           group_type: group
           admin_label: ''
           plugin_id: search_api_language
-          operator: '='
+          operator: in
           value:
-            - '***LANGUAGE_language_interface***'
+            '***LANGUAGE_language_interface***': '***LANGUAGE_language_interface***'
           group: 1
           exposed: false
           expose:
@@ -240,6 +241,7 @@ display:
             multiple: false
             remember_roles:
               authenticated: authenticated
+            reduce: false
           is_grouped: false
           group_info:
             label: ''
@@ -292,9 +294,13 @@ display:
         - 'languages:language_interface'
         - url
         - url.query_args
+        - 'url.query_args:sort_by'
+        - 'url.query_args:sort_order'
         - 'user.node_grants:view'
         - user.permissions
-      tags: {  }
+      tags:
+        - 'config:search_api.index.recipes'
+        - 'search_api_list:recipes'
   page_1:
     id: page_1
     display_title: Page
@@ -308,10 +314,21 @@ display:
     cache_metadata:
       max-age: -1
       contexts:
+        - 'facets_filter:f'
         - 'languages:language_content'
         - 'languages:language_interface'
         - url
         - url.query_args
+        - 'url.query_args:sort_by'
+        - 'url.query_args:sort_order'
         - 'user.node_grants:view'
         - user.permissions
-      tags: {  }
+      tags:
+        - 'config:facets.facet.category'
+        - 'config:facets.facet.difficulty'
+        - 'config:facets.facet.language'
+        - 'config:facets.facet.origin_country'
+        - 'config:facets.facet.origin_region'
+        - 'config:facets.facet.tags'
+        - 'config:search_api.index.recipes'
+        - 'search_api_list:recipes'
