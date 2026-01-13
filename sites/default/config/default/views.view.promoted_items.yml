@@ -492,7 +492,7 @@ display:
         pager: false
         filters: false
         filter_groups: false
-      css_class: view-promoted-items--sticky
+      css_class: view-promoted-items--single
       display_description: 'Shows sticky recipes in current language'
       rendering_language: '***LANGUAGE_language_content***'
       display_extenders: {  }

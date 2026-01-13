@@ -3,6 +3,13 @@
  * This file is used to style the 'Promoted Items' view.
  */
 
+/* Constrain the whole block including title */
+.block-views-blockpromoted-items-block-1 {
+  max-width: var(--content-max-width, 1200px);
+  margin-inline: auto;
+  padding-inline: var(--content-margin-x, 1rem);
+}
+
 .view-promoted-items--single {
   display: grid;
   gap: 14px;
