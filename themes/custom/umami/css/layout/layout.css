@@ -7,7 +7,8 @@
  */
 
 .container {
-  max-width: min(calc(100vw - var(--drupal-displace-offset-left, 0px) - var(--drupal-displace-offset-right, 0px) - 2rem), 1200px);
+  /* Use max() to ensure minimum 280px width even with admin toolbar on mobile */
+  max-width: min(max(280px, calc(100vw - var(--drupal-displace-offset-left, 0px) - var(--drupal-displace-offset-right, 0px) - 2rem)), 1200px);
   margin: auto;
 }
 
