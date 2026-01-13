@@ -274,10 +274,6 @@ img, video, iframe, table {
 .node--type-recipe .field--name-field-preparation-time,
 .node--type-recipe .field--name-field-cooking-time {
   font-size: 1rem;
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-  padding: 0.5rem 0;
 }
 
 /* ==========================================================================
@@ -293,19 +289,8 @@ img, video, iframe, table {
    TOUCH-FRIENDLY GENERAL IMPROVEMENTS
    ========================================================================== */
 
-/* All links have minimum touch target */
-.node--type-recipe a {
-  min-height: 44px;
-  display: inline-flex;
-  align-items: center;
-}
-
-/* Inline links don't need full height */
-.node--type-recipe p a,
-.node--type-recipe .field__item a {
-  min-height: auto;
-  display: inline;
-}
+/* Only apply large touch targets to specific action links, not all links */
+/* Label-items links (category, difficulty, etc.) keep their default display */
 
 /* ==========================================================================
    BREADCRUMBS - READABLE ON MOBILE
