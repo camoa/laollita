@@ -51,6 +51,16 @@
 
 html {
   box-sizing: border-box;
+  /* Increased base font size for better readability (75+ users) */
+  /* Default browser is 16px, we increase to 18px */
+  font-size: 112.5%; /* 18px */
+}
+
+/* Even larger on desktop where screens are further away */
+@media screen and (min-width: 60rem) {
+  html {
+    font-size: 118.75%; /* 19px */
+  }
 }
 *,
 *::before,
@@ -82,7 +92,7 @@ body {
   background: #fbf5ee;
   font-family: "Source Sans Pro", Verdana, sans-serif;
   font-size: 1rem;
-  line-height: 1.5rem;
+  line-height: 1.6; /* Improved line-height for readability */
 }
 
 h1,

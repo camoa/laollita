@@ -1,0 +1,370 @@
+/**
+ * @file
+ * Mobile-friendly improvements for 75+ users.
+ * Focuses on touch targets, readability, and comfortable spacing.
+ */
+
+/* ==========================================================================
+   PREVENT HORIZONTAL OVERFLOW
+   ========================================================================== */
+
+html, body {
+  overflow-x: hidden;
+  max-width: 100vw;
+}
+
+/* Ensure all content respects viewport */
+.dialog-off-canvas-main-canvas {
+  overflow-x: hidden;
+}
+
+/* Constrain any wide elements */
+img, video, iframe, table {
+  max-width: 100%;
+}
+
+/* ==========================================================================
+   RECIPE CARDS - HOMEPAGE & LISTINGS
+   ========================================================================== */
+
+/* Cards stack vertically on mobile with comfortable spacing */
+.view-promoted-items .view-content,
+.view-frontpage .view-content {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+  padding: 0 1rem;
+}
+
+/* Two columns only on larger screens */
+@media screen and (min-width: 40rem) {
+  .view-promoted-items .view-content,
+  .view-frontpage .view-content {
+    grid-template-columns: repeat(2, 1fr);
+    padding: 0;
+  }
+}
+
+/* Larger card padding on mobile for easier reading */
+.umami-card {
+  padding: 1.25rem;
+}
+
+@media screen and (min-width: 40rem) {
+  .umami-card {
+    padding: 1rem;
+  }
+}
+
+/* Card titles - larger and more readable */
+.umami-card__title {
+  font-size: 1.3rem;
+  line-height: 1.35;
+  margin-bottom: 0.5rem;
+}
+
+@media screen and (min-width: 60rem) {
+  .umami-card__title {
+    font-size: 1.424rem;
+  }
+}
+
+/* Larger touch target for "View Recipe" links */
+.umami-card .read-more,
+.umami-card__read-more a {
+  display: inline-block;
+  min-height: 44px;
+  padding: 0.75rem 1.5rem;
+  font-size: 1rem;
+  font-weight: 600;
+  text-decoration: none;
+  color: #008068;
+  border: 2px solid #008068;
+  border-radius: 4px;
+  transition: all 0.2s ease;
+}
+
+.umami-card .read-more:hover,
+.umami-card .read-more:focus,
+.umami-card__read-more a:hover,
+.umami-card__read-more a:focus {
+  background-color: #008068;
+  color: #fff;
+}
+
+/* Card metadata - slightly larger */
+.umami-card__label-items {
+  font-size: 0.95rem;
+  gap: 0.25rem;
+}
+
+/* ==========================================================================
+   RECIPE FULL VIEW - MOBILE OPTIMIZATIONS
+   ========================================================================== */
+
+/* Better padding on mobile */
+.node--type-recipe.node--view-mode-full {
+  padding: 1rem;
+}
+
+@media screen and (min-width: 40rem) {
+  .node--type-recipe.node--view-mode-full {
+    padding: 1.5rem;
+  }
+}
+
+@media screen and (min-width: 60rem) {
+  .node--type-recipe.node--view-mode-full {
+    padding: 2.37rem;
+  }
+}
+
+/* Recipe title - large and clear */
+.node--type-recipe.node--view-mode-full .node__title,
+.node--type-recipe.node--view-mode-full h1 {
+  font-size: 1.75rem;
+  line-height: 1.25;
+  margin-bottom: 1rem;
+}
+
+@media screen and (min-width: 60rem) {
+  .node--type-recipe.node--view-mode-full .node__title,
+  .node--type-recipe.node--view-mode-full h1 {
+    font-size: 2.369rem;
+  }
+}
+
+/* Summary text - readable */
+.node--type-recipe .field--name-field-summary {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+}
+
+/* ==========================================================================
+   INGREDIENTS - EASY TO READ
+   ========================================================================== */
+
+/* Ingredients container */
+.field--name-field-recipe-ingredients {
+  padding: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+@media screen and (min-width: 40rem) {
+  .field--name-field-recipe-ingredients {
+    padding: 1.5rem;
+  }
+}
+
+/* Individual ingredients - larger text, better spacing */
+.field--name-field-recipe-ingredients .field__item {
+  font-size: 1.05rem;
+  padding: 0.75rem 0;
+  margin: 0;
+  border-bottom: 1px solid #eec2cb;
+}
+
+/* Ingredient label */
+.field--name-field-recipe-ingredients .field__label {
+  font-size: 1.4rem;
+  margin-bottom: 1rem;
+}
+
+@media screen and (min-width: 60rem) {
+  .field--name-field-recipe-ingredients .field__label {
+    font-size: 1.77rem;
+  }
+}
+
+/* ==========================================================================
+   INSTRUCTIONS - CLEAR AND READABLE
+   ========================================================================== */
+
+.field--name-field-recipe-instruction {
+  font-size: 1.05rem;
+  line-height: 1.7;
+}
+
+.field--name-field-recipe-instruction p {
+  margin-bottom: 1.25rem;
+}
+
+.field--name-field-recipe-instruction ol,
+.field--name-field-recipe-instruction ul {
+  padding-left: 1.5rem;
+}
+
+.field--name-field-recipe-instruction li {
+  margin-bottom: 0.75rem;
+  padding-left: 0.5rem;
+}
+
+/* ==========================================================================
+   RECIPE SCALING CONTROLS - LARGE TOUCH TARGETS
+   ========================================================================== */
+
+.recipe-scaling__controls {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+}
+
+.recipe-scaling__button {
+  min-width: 48px;
+  min-height: 48px;
+  font-size: 1.5rem;
+  font-weight: bold;
+  border-radius: 50%;
+  border: 2px solid #008068;
+  background-color: #fff;
+  color: #008068;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.recipe-scaling__button:hover,
+.recipe-scaling__button:focus {
+  background-color: #008068;
+  color: #fff;
+}
+
+.recipe-scaling__value {
+  font-size: 1.25rem;
+  font-weight: 600;
+  min-width: 3rem;
+  text-align: center;
+}
+
+/* ==========================================================================
+   IMAGES - RESPONSIVE
+   ========================================================================== */
+
+/* Ensure images don't overflow on mobile */
+.node--type-recipe img,
+.umami-card img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Recipe main image */
+.node--type-recipe .field--name-field-media-image {
+  margin: 0 0 1.5rem 0;
+}
+
+@media screen and (min-width: 40rem) {
+  .node--type-recipe .field--name-field-media-image {
+    border-radius: 4px;
+    overflow: hidden;
+  }
+}
+
+/* ==========================================================================
+   COOKING INFO (TIME, SERVINGS, DIFFICULTY)
+   ========================================================================== */
+
+/* Meta info blocks - stack on mobile */
+.node--type-recipe .label-items,
+.node--type-recipe .field--name-field-difficulty,
+.node--type-recipe .field--name-field-recipe-category {
+  font-size: 1rem;
+  padding: 0.5rem 0;
+}
+
+/* Preparation/Cooking time display */
+.node--type-recipe .field--name-field-preparation-time,
+.node--type-recipe .field--name-field-cooking-time {
+  font-size: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 0;
+}
+
+/* ==========================================================================
+   ORIGIN INFO
+   ========================================================================== */
+
+.field--name-field-origin-country,
+.field--name-field-origin-region {
+  font-size: 1rem;
+}
+
+/* ==========================================================================
+   TOUCH-FRIENDLY GENERAL IMPROVEMENTS
+   ========================================================================== */
+
+/* All links have minimum touch target */
+.node--type-recipe a {
+  min-height: 44px;
+  display: inline-flex;
+  align-items: center;
+}
+
+/* Inline links don't need full height */
+.node--type-recipe p a,
+.node--type-recipe .field__item a {
+  min-height: auto;
+  display: inline;
+}
+
+/* ==========================================================================
+   BREADCRUMBS - READABLE ON MOBILE
+   ========================================================================== */
+
+.breadcrumb {
+  font-size: 0.95rem;
+  padding: 0.75rem 1rem;
+}
+
+.breadcrumb ol {
+  flex-wrap: wrap;
+  gap: 0.25rem;
+}
+
+.breadcrumb a {
+  padding: 0.25rem 0;
+}
+
+/* ==========================================================================
+   PRINT STYLES - BASIC
+   ========================================================================== */
+
+@media print {
+  /* Hide navigation elements */
+  .layout-header,
+  .layout-footer,
+  .breadcrumb,
+  .tabs,
+  .recipe-scaling,
+  .read-more,
+  .block-facets {
+    display: none !important;
+  }
+
+  /* Full width content */
+  .node--type-recipe {
+    padding: 0;
+    border: none;
+    max-width: 100%;
+  }
+
+  /* Readable print font size */
+  body {
+    font-size: 12pt;
+    line-height: 1.5;
+    color: #000;
+    background: #fff;
+  }
+
+  /* Ensure ingredients print clearly */
+  .field--name-field-recipe-ingredients {
+    background: none;
+    border: 1px solid #ccc;
+    padding: 1rem;
+  }
+}
