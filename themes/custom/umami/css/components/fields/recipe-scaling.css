@@ -13,14 +13,14 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: 2.5rem;
-  height: 2.5rem;
+  width: 1.5rem;
+  height: 1.5rem;
   padding: 0;
   border: 2px solid #008068;
   border-radius: 50%;
   background-color: #fff;
   color: #008068;
-  font-size: 1.5rem;
+  font-size: 1rem;
   font-weight: 700;
   line-height: 1;
   cursor: pointer;
@@ -77,16 +77,16 @@
   pointer-events: none;
 }
 
-/* Larger touch targets for mobile/accessibility */
+/* Mobile adjustments */
 @media (max-width: 768px) {
   .recipe-scaling__btn {
-    width: 3rem;
-    height: 3rem;
-    font-size: 1.75rem;
+    width: 2rem;
+    height: 2rem;
+    font-size: 1.25rem;
   }
 
   .recipe-scaling__servings {
-    font-size: 1.5rem;
+    font-size: 1.25rem;
   }
 
   .recipe-scaling__reset {
