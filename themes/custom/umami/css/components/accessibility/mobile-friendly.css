@@ -8,12 +8,7 @@
    PREVENT HORIZONTAL OVERFLOW
    ========================================================================== */
 
-html, body {
-  overflow-x: hidden;
-  max-width: 100vw;
-}
-
-/* Ensure all content respects viewport */
+/* Prevent horizontal scroll on the main content wrapper (not html/body to avoid admin toolbar conflicts) */
 .dialog-off-canvas-main-canvas {
   overflow-x: hidden;
 }
