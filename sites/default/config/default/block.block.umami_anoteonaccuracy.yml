@@ -6,6 +6,7 @@ dependencies:
     - 'block_content:disclaimer_block:1ff7c9bb-bdf4-4164-8b49-b7dadf77a237'
   module:
     - block_content
+    - system
   theme:
     - umami
 id: umami_anoteonaccuracy
@@ -20,4 +21,8 @@ settings:
   label_display: visible
   provider: block_content
   view_mode: full
-visibility: {  }
+visibility:
+  request_path:
+    id: request_path
+    negate: false
+    pages: '<front>'
