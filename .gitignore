@@ -10,7 +10,7 @@
 /profiles/contrib/
 
 # Configuration files with sensitive information
-sites/*/settings*.php
+#sites/*/settings*.php
 sites/*/services*.yml
 !sites/*/default.settings.php
 !sites/*/default.services.yml
