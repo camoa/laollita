@@ -1,10 +1,10 @@
-label: 'Artículos promocionados'
-description: 'Una vista para mostrar los elementos promocionados en la parte superior de la página de inicio.'
+label: 'Recetas Destacadas'
+description: 'Muestra recetas destacadas (sticky) en la página de inicio.'
 display:
   default:
     display_title: 'Por defecto'
     display_options:
-      title: 'Artículos Promocionados Doble'
+      title: 'Recetas Destacadas'
       fields:
         title:
           separator: ', '
@@ -15,7 +15,8 @@ display:
           exposed_sorts_label: 'Ordenar por'
           sort_asc_label: Asc
           sort_desc_label: Desc
-  attachment_1:
-    display_title: 'Adjunto: Artículos Promocionados Doble'
   block_1:
-    display_title: 'Bloque: Artículos Promocionados - Sencillo'
+    display_title: 'Bloque: Recetas Destacadas'
+    display_options:
+      title: 'Recetas Destacadas'
+      block_description: 'Recetas Destacadas'
