@@ -49,3 +49,4 @@ drush/*.local.yml
 .env
 .env.local
 .env.*.local
+sites/default/settings.local.php

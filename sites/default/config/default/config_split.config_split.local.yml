@@ -1,0 +1,14 @@
+uuid: a1b2c3d4-local-split-uuid-000000000001
+langcode: en
+status: false
+dependencies: {  }
+id: local
+label: Local
+description: 'Local development configuration'
+weight: 0
+storage: folder
+folder: sites/default/config/envs/local
+module: {  }
+theme: {  }
+complete_list: {  }
+partial_list: {  }

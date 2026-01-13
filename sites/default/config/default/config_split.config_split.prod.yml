@@ -1,0 +1,14 @@
+uuid: a1b2c3d4-prod-split-uuid-0000000000002
+langcode: en
+status: false
+dependencies: {  }
+id: prod
+label: Production
+description: 'Production-only configuration'
+weight: 0
+storage: folder
+folder: sites/default/config/envs/prod
+module: {  }
+theme: {  }
+complete_list: {  }
+partial_list: {  }
