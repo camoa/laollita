@@ -1,0 +1,63 @@
+uuid: f8a2c1d4-5e6b-4a3f-9c8d-7e1f2a3b4c5d
+langcode: en
+status: true
+dependencies:
+  config:
+    - search_api.index.recipes
+    - views.view.recipe_search
+  module:
+    - search_api
+id: language
+name: Language
+weight: -1
+min_count: 1
+missing: false
+missing_label: 'Not specified'
+url_alias: lang
+facet_source_id: 'search_api:views_page__recipe_search__page_1'
+field_identifier: langcode
+query_operator: or
+hard_limit: 0
+exclude: false
+use_hierarchy: false
+keep_hierarchy_parents_active: false
+hierarchy:
+  type: taxonomy
+  config: {  }
+expand_hierarchy: false
+enable_parent_when_child_gets_disabled: true
+widget:
+  type: links
+  config:
+    show_numbers: true
+    soft_limit: 0
+    show_reset_link: true
+    reset_text: 'All languages'
+    hide_reset_when_no_selection: true
+    soft_limit_settings:
+      show_less_label: 'Show less'
+      show_more_label: 'Show more'
+empty_behavior:
+  behavior: none
+only_visible_when_facet_source_is_visible: true
+show_only_one_result: false
+show_title: true
+processor_configs:
+  active_widget_order:
+    processor_id: active_widget_order
+    weights:
+      sort: 10
+    settings:
+      sort: ASC
+  display_value_widget_order:
+    processor_id: display_value_widget_order
+    weights:
+      sort: 30
+    settings:
+      sort: ASC
+  url_processor_handler:
+    processor_id: url_processor_handler
+    weights:
+      pre_query: 50
+      build: 15
+    settings: {  }

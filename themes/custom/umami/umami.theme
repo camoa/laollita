@@ -214,3 +214,25 @@ function umami_preprocess_links(&$variables): void {
     }
   }
 }
+
+/**
+ * Implements hook_preprocess_HOOK() for facets_result_item.
+ *
+ * Transforms language codes to friendly names in the language facet.
+ */
+function umami_preprocess_facets_result_item(&$variables): void {
+  // Only transform for the language facet.
+  if (isset($variables['facet']) && $variables['facet']->id() === 'language') {
+    $language_names = [
+      'en' => t('English'),
+      'es' => t('Español'),
+      'it' => t('Italiano'),
+      'fr' => t('Français'),
+    ];
+
+    $raw_value = $variables['raw_value'] ?? '';
+    if (isset($language_names[$raw_value])) {
+      $variables['value'] = $language_names[$raw_value];
+    }
+  }
+}
