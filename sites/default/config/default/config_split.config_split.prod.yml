@@ -12,5 +12,6 @@ storage: folder
 folder: sites/default/config/envs/prod
 module: {  }
 theme: {  }
-complete_list: {  }
+complete_list:
+  - system.performance
 partial_list: {  }
