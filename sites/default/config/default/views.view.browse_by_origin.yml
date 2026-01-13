@@ -314,9 +314,9 @@ display:
         type: grid_responsive
         options:
           uses_fields: false
-          columns: 6
-          cell_min_width: 100
-          grid_gutter: 10
+          columns: 4
+          cell_min_width: 160
+          grid_gutter: 16
           alignment: horizontal
       row:
         type: 'entity:node'

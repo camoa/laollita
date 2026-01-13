@@ -40,6 +40,18 @@ img, video, iframe, table {
   }
 }
 
+/* ==========================================================================
+   BROWSE BY ORIGIN VIEW - EXPOSED FORM
+   ========================================================================== */
+
+/* Larger form elements for touch */
+.view-browse-by-origin .views-exposed-form input[type="text"],
+.view-browse-by-origin .views-exposed-form select {
+  min-height: 48px;
+  font-size: 1rem;
+  padding: 0.5rem 1rem;
+}
+
 /* Larger card padding on mobile for easier reading */
 .umami-card {
   padding: 1.25rem;
