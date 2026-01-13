@@ -1,0 +1,20 @@
+display:
+  default:
+    display_options:
+      title: 'Recetas por Origen'
+      exposed_form:
+        options:
+          submit_button: Filtrar
+          reset_button_label: Limpiar
+      filters:
+        title:
+          expose:
+            label: 'Nombre de Receta'
+            placeholder: 'Nombre de receta...'
+        field_origin_country_target_id:
+          expose:
+            label: País
+        field_origin_region_target_id:
+          expose:
+            label: Región
+label: 'Recetas por Origen'

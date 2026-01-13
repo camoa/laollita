@@ -213,6 +213,19 @@ display:
           value: '1'
           group: 1
           exposed: false
+        langcode:
+          id: langcode
+          table: search_api_index_recipes
+          field: langcode
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: search_api_language
+          operator: '='
+          value:
+            - '***LANGUAGE_language_interface***'
+          group: 1
+          exposed: false
           expose:
             operator_id: ''
             label: ''

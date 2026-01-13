@@ -12,7 +12,7 @@ dependencies:
 id: umami_facet_category
 theme: umami
 region: sidebar
-weight: 0
+weight: -5
 provider: null
 plugin: 'facet_block:category'
 settings:

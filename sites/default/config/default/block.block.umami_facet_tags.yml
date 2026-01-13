@@ -12,7 +12,7 @@ dependencies:
 id: umami_facet_tags
 theme: umami
 region: sidebar
-weight: 2
+weight: -1
 provider: null
 plugin: 'facet_block:tags'
 settings:
