@@ -264,6 +264,7 @@ display:
         title: Articles
         description: ''
         weight: 20
+        enabled: false
         expanded: false
         menu_name: main
         parent: ''

@@ -1,0 +1,23 @@
+uuid: 733b7ccd-1c34-4dc1-bf9e-9b192ec5d46a
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'block_content:disclaimer_block:1ff7c9bb-bdf4-4164-8b49-b7dadf77a237'
+  module:
+    - block_content
+  theme:
+    - umami
+id: umami_anoteonaccuracy
+theme: umami
+region: highlighted
+weight: 0
+provider: null
+plugin: 'block_content:1ff7c9bb-bdf4-4164-8b49-b7dadf77a237'
+settings:
+  id: 'block_content:1ff7c9bb-bdf4-4164-8b49-b7dadf77a237'
+  label: 'A Note on Accuracy'
+  label_display: visible
+  provider: block_content
+  view_mode: full
+visibility: {  }
