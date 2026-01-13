@@ -6,6 +6,8 @@ id: local
 label: Local
 description: 'Local development configuration'
 weight: 0
+stackable: false
+no_patching: false
 storage: folder
 folder: sites/default/config/envs/local
 module: {  }

@@ -6,6 +6,8 @@ id: prod
 label: Production
 description: 'Production-only configuration'
 weight: 0
+stackable: false
+no_patching: false
 storage: folder
 folder: sites/default/config/envs/prod
 module: {  }
