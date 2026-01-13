@@ -1,0 +1,575 @@
+/**
+ * @file
+ * UX improvements for faceted search page.
+ * Optimized for 75+ users with larger touch targets, better contrast, and clearer visual feedback.
+ */
+
+/* ==========================================================================
+   SEARCH PAGE LAYOUT
+   ========================================================================== */
+
+/* Better spacing for two-column layout on search page */
+.path-search.two-columns .region-content {
+  padding-right: 2rem;
+}
+
+.path-search .region-sidebar {
+  padding-top: 1rem;
+}
+
+/* ==========================================================================
+   FACETS - SIDEBAR FILTERS
+   ========================================================================== */
+
+/* Facet block styling */
+.block-facets {
+  margin-bottom: 2rem;
+  padding: 1.5rem;
+  background-color: #fff;
+  border: 1px solid #fcece7;
+  border-radius: 4px;
+}
+
+/* Facet titles - larger and bolder */
+.block-facets .block__title {
+  margin: 0 0 1rem 0;
+  padding-bottom: 0.75rem;
+  border-bottom: 2px solid #008068;
+  color: #000;
+  font-size: 1.25rem;
+  font-weight: 600;
+}
+
+/* Facet list */
+.facets-widget-links ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+/* Individual facet items - large touch targets */
+.facets-widget-links li {
+  margin: 0;
+  padding: 0;
+}
+
+.facets-widget-links li a,
+.facets-widget-links li span.facet-item {
+  display: flex;
+  align-items: center;
+  min-height: 48px;
+  padding: 0.75rem 1rem;
+  margin: 0.25rem 0;
+  text-decoration: none;
+  color: #333;
+  font-size: 1.1rem;
+  line-height: 1.3;
+  border-radius: 4px;
+  transition: background-color 0.2s ease, border-color 0.2s ease;
+  border: 2px solid transparent;
+  background-color: #f9f9f9;
+}
+
+/* Hover and focus states - clear visual feedback */
+.facets-widget-links li a:hover,
+.facets-widget-links li a:focus {
+  background-color: #e6f5f2;
+  border-color: #008068;
+  outline: none;
+  color: #000;
+}
+
+/* Active/selected facet - checkbox-style visual */
+.facets-widget-links li.is-active > a,
+.facets-widget-links li.facet-item--active > a {
+  background-color: #008068;
+  color: #fff;
+  font-weight: 600;
+  border-color: #006654;
+}
+
+.facets-widget-links li.is-active > a:hover,
+.facets-widget-links li.is-active > a:focus,
+.facets-widget-links li.facet-item--active > a:hover,
+.facets-widget-links li.facet-item--active > a:focus {
+  background-color: #006654;
+  border-color: #004d40;
+}
+
+/* Checkbox-style indicator before facet text */
+.facets-widget-links li a::before {
+  content: "";
+  display: inline-block;
+  width: 22px;
+  height: 22px;
+  min-width: 22px;
+  margin-right: 0.75rem;
+  border: 2px solid #767775;
+  border-radius: 3px;
+  background-color: #fff;
+  transition: all 0.2s ease;
+}
+
+/* Checked state - hide checkbox when we have the X icon */
+.facets-widget-links li.is-active > a::before,
+.facets-widget-links li.facet-item--active > a::before,
+.facets-widget-links li a.is-active::before {
+  display: none;
+}
+
+/* Active link state (facet selected) */
+.facets-widget-links li a.is-active {
+  background-color: #008068;
+  color: #fff;
+  font-weight: 600;
+  border-color: #006654;
+}
+
+.facets-widget-links li a.is-active:hover,
+.facets-widget-links li a.is-active:focus {
+  background-color: #c00;
+  border-color: #900;
+}
+
+/* Remove icon styling - large and visible */
+.facet-item__remove {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  margin-right: 0.5rem;
+  background-color: rgba(255, 255, 255, 0.3);
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.facet-item__remove svg {
+  display: block;
+  width: 16px;
+  height: 16px;
+}
+
+/* On hover, make X more prominent */
+.facets-widget-links li a.is-active:hover .facet-item__remove,
+.facets-widget-links li a.is-active:focus .facet-item__remove {
+  background-color: rgba(255, 255, 255, 0.5);
+}
+
+/* Hide old (-) indicator if any remain */
+.facet-item__status:not(.facet-item__remove) {
+  display: none;
+}
+
+/* Facet count - larger and clearer */
+.facets-widget-links .facet-item__count {
+  margin-left: auto;
+  padding: 0.25rem 0.6rem;
+  background-color: rgba(0, 0, 0, 0.08);
+  border-radius: 12px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: #555;
+}
+
+.facets-widget-links li.is-active .facet-item__count,
+.facets-widget-links li.facet-item--active .facet-item__count {
+  background-color: rgba(255, 255, 255, 0.25);
+  color: #fff;
+}
+
+/* Reset link - styled as clear button */
+.facets-widget-links .facet-item--reset a {
+  background-color: #fff;
+  border: 2px dashed #ccc;
+  color: #666;
+  font-style: italic;
+}
+
+.facets-widget-links .facet-item--reset a::before {
+  display: none;
+}
+
+.facets-widget-links .facet-item--reset a:hover,
+.facets-widget-links .facet-item--reset a:focus {
+  background-color: #fff5f5;
+  border-color: #c00;
+  border-style: solid;
+  color: #c00;
+}
+
+/* ==========================================================================
+   SEARCH FORM ON RESULTS PAGE
+   ========================================================================== */
+
+/* Exposed form wrapper */
+.path-search .views-exposed-form {
+  padding: 1.5rem;
+  margin-bottom: 2rem;
+  background-color: #fff;
+  border: 1px solid #fcece7;
+  border-radius: 4px;
+}
+
+/* Search input - larger */
+.path-search .views-exposed-form .form-type-textfield input,
+.path-search .views-exposed-form .form-type-search input {
+  width: 100%;
+  padding: 1rem 1rem 1rem 3rem;
+  font-size: 1.2rem;
+  border: 2px solid #767775;
+  border-radius: 4px;
+  background: url("../../../../images/svg/search.svg") no-repeat 0.75rem center #fff;
+  background-size: 24px;
+}
+
+.path-search .views-exposed-form .form-type-textfield input:focus,
+.path-search .views-exposed-form .form-type-search input:focus {
+  border-color: #008068;
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(0, 128, 104, 0.2);
+}
+
+/* Form actions - larger buttons */
+.path-search .views-exposed-form .form-actions {
+  margin-top: 1rem;
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.path-search .views-exposed-form .form-submit {
+  min-height: 48px;
+  padding: 0.75rem 2rem;
+  font-size: 1.1rem;
+  font-weight: 600;
+  border: 2px solid #008068;
+  border-radius: 4px;
+  background-color: #008068;
+  color: #fff;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.path-search .views-exposed-form .form-submit:hover,
+.path-search .views-exposed-form .form-submit:focus {
+  background-color: #006654;
+  border-color: #006654;
+}
+
+/* Reset button */
+.path-search .views-exposed-form input[type="reset"],
+.path-search .views-exposed-form input[value="Reset"] {
+  min-height: 48px;
+  padding: 0.75rem 2rem;
+  font-size: 1.1rem;
+  background-color: #fff;
+  border: 2px solid #767775;
+  color: #333;
+}
+
+.path-search .views-exposed-form input[type="reset"]:hover,
+.path-search .views-exposed-form input[value="Reset"]:hover {
+  background-color: #f5f5f5;
+  border-color: #333;
+}
+
+/* ==========================================================================
+   SEARCH RESULTS - RECIPE CARDS
+   ========================================================================== */
+
+/* Results grid */
+.path-search .view-content {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+}
+
+@media screen and (min-width: 30em) {
+  .path-search .view-content {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media screen and (min-width: 60em) {
+  .path-search .view-content {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* Card enhancements for search results */
+.path-search .umami-card {
+  height: 100%;
+  transition: box-shadow 0.2s ease, transform 0.2s ease;
+}
+
+.path-search .umami-card:hover {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  transform: translateY(-2px);
+}
+
+/* Larger card titles */
+.path-search .umami-card__title {
+  font-size: 1.3rem;
+  font-weight: 600;
+  line-height: 1.3;
+  margin-bottom: 0.5rem;
+}
+
+.path-search .umami-card__title a:focus {
+  outline: 3px solid #008068;
+  outline-offset: 2px;
+}
+
+/* Larger "View Recipe" button */
+.path-search .umami-card .read-more {
+  display: inline-block;
+  min-height: 44px;
+  padding: 0.6rem 1.25rem;
+  margin-top: 0.5rem;
+  font-size: 1rem;
+  font-weight: 600;
+  text-decoration: none;
+  color: #008068;
+  border: 2px solid #008068;
+  border-radius: 4px;
+  transition: all 0.2s ease;
+}
+
+.path-search .umami-card .read-more:hover,
+.path-search .umami-card .read-more:focus {
+  background-color: #008068;
+  color: #fff;
+}
+
+/* ==========================================================================
+   PAGINATION
+   ========================================================================== */
+
+/* Pager wrapper */
+.path-search .pager {
+  margin: 2.5rem 0 1rem;
+  padding: 1.5rem;
+  background-color: #fff;
+  border: 1px solid #fcece7;
+  border-radius: 4px;
+}
+
+.path-search .pager__items {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+/* Pager items - large touch targets */
+.path-search .pager__item {
+  display: inline-block;
+  margin: 0;
+  padding: 0;
+}
+
+.path-search .pager__item a,
+.path-search .pager__item.is-active span {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 48px;
+  min-height: 48px;
+  padding: 0.5rem 1rem;
+  font-size: 1.1rem;
+  font-weight: 600;
+  text-decoration: none;
+  color: #333;
+  background-color: #f5f5f5;
+  border: 2px solid transparent;
+  border-radius: 4px;
+  transition: all 0.2s ease;
+}
+
+.path-search .pager__item a:hover,
+.path-search .pager__item a:focus {
+  background-color: #e6f5f2;
+  border-color: #008068;
+  color: #008068;
+  outline: none;
+}
+
+/* Current page - very clear indication */
+.path-search .pager__item.is-active span {
+  background-color: #008068;
+  color: #fff;
+  border-color: #006654;
+}
+
+/* Previous/Next buttons */
+.path-search .pager__item--previous a,
+.path-search .pager__item--next a,
+.path-search .pager__item--first a,
+.path-search .pager__item--last a {
+  padding: 0.5rem 1.25rem;
+  background-color: #fff;
+  border-color: #ddd;
+}
+
+/* ==========================================================================
+   EMPTY STATE - NO RESULTS
+   ========================================================================== */
+
+.path-search .view-empty {
+  padding: 3rem 2rem;
+  margin: 2rem 0;
+  text-align: center;
+  background-color: #fff;
+  border: 2px dashed #ddd;
+  border-radius: 8px;
+}
+
+.path-search .view-empty p {
+  margin: 0;
+  font-size: 1.3rem;
+  color: #555;
+  line-height: 1.5;
+}
+
+/* ==========================================================================
+   ACTIVE FILTERS SUMMARY
+   ========================================================================== */
+
+/* Show applied filters clearly at top */
+.facets-summary {
+  padding: 1rem 1.5rem;
+  margin-bottom: 1.5rem;
+  background-color: #e6f5f2;
+  border: 1px solid #008068;
+  border-radius: 4px;
+}
+
+.facets-summary__label {
+  font-weight: 600;
+  color: #006654;
+  margin-right: 0.5rem;
+}
+
+.facets-summary__list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin: 0.5rem 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.facets-summary__item {
+  display: inline-block;
+}
+
+.facets-summary__item a {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  text-decoration: none;
+  color: #fff;
+  background-color: #008068;
+  border-radius: 20px;
+  transition: background-color 0.2s ease;
+}
+
+.facets-summary__item a:hover,
+.facets-summary__item a:focus {
+  background-color: #c00;
+}
+
+.facets-summary__item a::after {
+  content: "\00d7";
+  margin-left: 0.5rem;
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+/* ==========================================================================
+   RESULT COUNT
+   ========================================================================== */
+
+.path-search .view-header {
+  padding: 1rem 0;
+  margin-bottom: 1rem;
+  font-size: 1.15rem;
+  color: #555;
+  border-bottom: 1px solid #eee;
+}
+
+/* ==========================================================================
+   MOBILE OPTIMIZATIONS
+   ========================================================================== */
+
+@media screen and (max-width: 47.99em) {
+  /* Sidebar becomes full width on mobile */
+  .path-search.two-columns .region-content {
+    padding-right: 0;
+  }
+
+  /* Stack facets nicely on mobile */
+  .block-facets {
+    margin-bottom: 1.5rem;
+  }
+
+  /* Larger touch targets on mobile */
+  .facets-widget-links li a {
+    padding: 1rem;
+    font-size: 1.15rem;
+  }
+
+  /* Full width buttons on mobile */
+  .path-search .views-exposed-form .form-actions {
+    flex-direction: column;
+  }
+
+  .path-search .views-exposed-form .form-submit,
+  .path-search .views-exposed-form input[type="reset"] {
+    width: 100%;
+    text-align: center;
+  }
+
+  /* Single column cards on small mobile */
+  .path-search .view-content {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ==========================================================================
+   HIGH CONTRAST / ACCESSIBILITY
+   ========================================================================== */
+
+/* Ensure sufficient contrast for all interactive elements */
+@media (prefers-contrast: more) {
+  .facets-widget-links li a {
+    border-color: #333;
+  }
+
+  .facets-widget-links li.is-active > a {
+    border-color: #000;
+  }
+
+  .path-search .pager__item a {
+    border-color: #333;
+  }
+}
+
+/* Respect reduced motion preferences */
+@media (prefers-reduced-motion: reduce) {
+  .path-search .umami-card,
+  .facets-widget-links li a,
+  .path-search .pager__item a {
+    transition: none;
+  }
+
+  .path-search .umami-card:hover {
+    transform: none;
+  }
+}

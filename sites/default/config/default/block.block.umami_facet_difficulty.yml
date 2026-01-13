@@ -1,0 +1,26 @@
+uuid: 9fb7f128-337f-4ee4-9e0d-679c14857603
+langcode: en
+status: true
+dependencies:
+  config:
+    - facets.facet.difficulty
+  module:
+    - facets
+  theme:
+    - umami
+id: umami_facet_difficulty
+theme: umami
+region: sidebar
+weight: 1
+provider: null
+plugin: 'facet_block:difficulty'
+settings:
+  id: 'facet_block:difficulty'
+  label: Difficulty
+  label_display: visible
+  provider: facets
+visibility:
+  request_path:
+    id: request_path
+    negate: false
+    pages: /search/recipes

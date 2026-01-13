@@ -12,7 +12,7 @@
 .branding__site-logo {
   display: inline-block;
   width: 100%;
-  max-width: 205px;
+  max-width: 50px;
   background-color: inherit;
 }
 
@@ -21,7 +21,8 @@
   background-color: inherit;
 }
 
-.branding__site-logo svg {
+.branding__site-logo svg,
+.branding__site-logo img {
   width: 100%;
   max-width: 205px;
   height: auto;

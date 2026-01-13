@@ -1,19 +1,23 @@
 /**
  * @file
  * This file is used to style the search block.
+ * Supports both core search (.search-block-form) and Search API Block (.block-search-api-form-block).
  */
 
-.search-block-form {
+.search-block-form,
+.block-search-api-form-block {
   display: none;
 }
 
 @media screen and (min-width: 48em) {
-  .search-block-form {
+  .search-block-form,
+  .block-search-api-form-block {
     display: block;
   }
 }
 
-.search-block-form form {
+.search-block-form form,
+.block-search-api-form-block form {
   display: flex;
   margin-top: 1.3rem;
   margin-bottom: 1.2rem;
@@ -52,21 +56,25 @@
 }
 
 /* Search input */
-.search-block-form .form-type-search {
+.search-block-form .form-type-search,
+.block-search-api-form-block .form-type-search-api-autocomplete {
   margin-top: 0;
   margin-bottom: 0;
   border: 1px solid #dbdbdb;
   border-top-left-radius: 3px; /* LTR */
-  border-bottom-right-radius: 3px; /* LTR */
+  border-bottom-left-radius: 3px; /* LTR */
+  border-right: none;
 }
-[dir="rtl"] .search-block-form .form-type-search {
+[dir="rtl"] .search-block-form .form-type-search,
+[dir="rtl"] .block-search-api-form-block .form-type-search-api-autocomplete {
   border-top-left-radius: 0;
   border-top-right-radius: 3px;
   border-bottom-right-radius: 3px;
   border-bottom-left-radius: 0;
 }
 
-.search-block-form .form-search {
+.search-block-form .form-search,
+.block-search-api-form-block .form-text {
   width: auto;
   height: auto;
   margin: 0;
@@ -78,33 +86,50 @@
   line-height: normal;
 }
 
+/* Override core autocomplete throbber - keep search icon on left, throbber on right */
+.js .block-search-api-form-block input.form-autocomplete {
+  background-image: url(../../../../images/svg/search.svg), url(../../../../../../core/misc/throbber-inactive.svg);
+  background-repeat: no-repeat, no-repeat;
+  background-position: 0.5em center, calc(100% - 0.5em) center;
+  background-color: #fff;
+}
+.js .block-search-api-form-block input.form-autocomplete.ui-autocomplete-loading {
+  background-image: url(../../../../images/svg/search.svg), url(../../../../../../core/misc/throbber-active.svg);
+}
+
 @media screen and (min-width: 48em) {
-  .search-block-form .form-search {
+  .search-block-form .form-search,
+  .block-search-api-form-block .form-text {
     width: 20rem;
   }
 }
 
-.search-block-form .form-search:focus {
+.search-block-form .form-search:focus,
+.block-search-api-form-block .form-text:focus {
   border: 2px solid #008068;
   border-top-left-radius: 2px; /* LTR */
   border-bottom-left-radius: 2px; /* LTR */
 }
-[dir="rtl"] .search-block-form .form-search:focus {
+[dir="rtl"] .search-block-form .form-search:focus,
+[dir="rtl"] .block-search-api-form-block .form-text:focus {
   border-top-left-radius: 0;
   border-top-right-radius: 2px;
   border-bottom-right-radius: 2px;
   border-bottom-left-radius: 0;
 }
 
-.form-search::placeholder {
+.form-search::placeholder,
+.block-search-api-form-block .form-text::placeholder {
   opacity: 1;
 }
-.form-type-search .form-search {
+.form-type-search .form-search,
+.block-search-api-form-block .form-text {
   box-sizing: border-box; /* Override input[type="search"] of normalize.css */
 }
 
 /* Search submit */
-.search-block-form .form-actions {
+.search-block-form .form-actions,
+.block-search-api-form-block .form-actions {
   position: relative;
   margin: 0;
   padding: 0;
@@ -114,7 +139,8 @@
   border-top-right-radius: 3px; /* LTR */
   border-bottom-right-radius: 3px; /* LTR */
 }
-[dir="rtl"] .search-block-form .form-actions {
+[dir="rtl"] .search-block-form .form-actions,
+[dir="rtl"] .block-search-api-form-block .form-actions {
   border-right: none;
   border-left: 1px solid #dbdbdb;
   border-top-left-radius: 3px;
@@ -122,10 +148,12 @@
   border-bottom-right-radius: 0;
   border-bottom-left-radius: 3px;
 }
-.search-block-form .form-actions .button {
+.search-block-form .form-actions .button,
+.block-search-api-form-block .form-actions .button {
   margin: 0;
 }
-.search-block-form .form-submit {
+.search-block-form .form-submit,
+.block-search-api-form-block .form-submit {
   margin: 0;
   padding: 0.6em 1.25em 0.4em;
   transition:
@@ -138,11 +166,13 @@
 }
 
 @media screen and (min-width: 48em) {
-  .search-block-form .form-submit {
+  .search-block-form .form-submit,
+  .block-search-api-form-block .form-submit {
     border-top-left-radius: 0; /* LTR */
     border-bottom-left-radius: 0; /* LTR */
   }
-  [dir="rtl"] .search-block-form .form-submit {
+  [dir="rtl"] .search-block-form .form-submit,
+  [dir="rtl"] .block-search-api-form-block .form-submit {
     border-top-left-radius: 3px;
     border-top-right-radius: 0;
     border-bottom-right-radius: 0;
@@ -151,7 +181,9 @@
 }
 
 .search-block-form .form-submit:focus,
-.search-block-form .form-submit:hover {
+.search-block-form .form-submit:hover,
+.block-search-api-form-block .form-submit:focus,
+.block-search-api-form-block .form-submit:hover {
   margin: 0;
   border: 2px solid #008068;
   outline-offset: 2px;

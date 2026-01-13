@@ -1,0 +1,18 @@
+uuid: 7739dc9c-701d-4c47-b624-3354b7e31042
+langcode: en
+status: true
+dependencies:
+  module:
+    - search_api_db
+id: database
+name: 'Database Server'
+description: 'Search API server using the database backend'
+backend: search_api_db
+backend_config:
+  database: 'default:default'
+  min_chars: 3
+  matching: partial
+  phrase: bigram
+  autocomplete:
+    suggest_suffix: true
+    suggest_words: true

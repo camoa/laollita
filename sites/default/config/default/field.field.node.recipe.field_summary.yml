@@ -15,7 +15,7 @@ entity_type: node
 bundle: recipe
 label: Summary
 description: 'Provide a short overview of this recipe.'
-required: true
+required: false
 translatable: true
 default_value: {  }
 default_value_callback: ''

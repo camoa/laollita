@@ -1,0 +1,41 @@
+uuid: 3a431dc3-52cc-48a8-b48b-1299ec1aa43d
+langcode: en
+status: true
+dependencies:
+  config:
+    - search_api.index.recipes
+    - views.view.recipe_search
+  module:
+    - search_api
+    - views
+id: recipe_search
+label: 'Recipe Search'
+index_id: recipes
+suggester_settings:
+  live_results:
+    fields:
+      - title
+      - field_summary
+    highlight:
+      enabled: false
+      field: ''
+    suggest_keys: true
+    view_modes:
+      'entity:node':
+        recipe: card
+suggester_weights:
+  live_results: 0
+suggester_limits:
+  live_results: 5
+search_settings:
+  'views:recipe_search':
+    displays:
+      default: true
+      selected: {  }
+options:
+  limit: 10
+  min_length: 3
+  show_count: false
+  delay: 300
+  submit_button_selector: ':submit'
+  autosubmit: true

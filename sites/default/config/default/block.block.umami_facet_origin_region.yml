@@ -1,0 +1,26 @@
+uuid: 3cf16d7c-a34c-47b3-ada4-f5444d0d2582
+langcode: en
+status: true
+dependencies:
+  config:
+    - facets.facet.origin_region
+  module:
+    - facets
+  theme:
+    - umami
+id: umami_facet_origin_region
+theme: umami
+region: sidebar
+weight: 4
+provider: null
+plugin: 'facet_block:origin_region'
+settings:
+  id: 'facet_block:origin_region'
+  label: 'Origin Region'
+  label_display: visible
+  provider: facets
+visibility:
+  request_path:
+    id: request_path
+    negate: false
+    pages: /search/recipes

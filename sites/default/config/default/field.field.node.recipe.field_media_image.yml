@@ -6,6 +6,13 @@ dependencies:
     - field.storage.node.field_media_image
     - media.type.image
     - node.type.recipe
+  module:
+    - ai_translate
+third_party_settings:
+  ai_translate:
+    entity_reference:
+      translate_references: default
+    translate_references: default
 _core:
   default_config_hash: ryYHomXkei_ZyanDgL1n8uh0oX2q6s4qorLLp-Dm7to
 id: node.recipe.field_media_image
@@ -14,7 +21,7 @@ entity_type: node
 bundle: recipe
 label: 'Media Image'
 description: ''
-required: true
+required: false
 translatable: false
 default_value: {  }
 default_value_callback: ''
@@ -25,6 +32,7 @@ settings:
       image: image
     sort:
       field: _none
+      direction: ASC
     auto_create: true
     auto_create_bundle: ''
 field_type: entity_reference

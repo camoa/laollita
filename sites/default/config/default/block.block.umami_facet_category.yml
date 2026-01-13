@@ -1,0 +1,26 @@
+uuid: 573af226-b310-4db6-bb61-05af46270df0
+langcode: en
+status: true
+dependencies:
+  config:
+    - facets.facet.category
+  module:
+    - facets
+  theme:
+    - umami
+id: umami_facet_category
+theme: umami
+region: sidebar
+weight: 0
+provider: null
+plugin: 'facet_block:category'
+settings:
+  id: 'facet_block:category'
+  label: Category
+  label_display: visible
+  provider: facets
+visibility:
+  request_path:
+    id: request_path
+    negate: false
+    pages: /search/recipes

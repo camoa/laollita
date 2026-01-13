@@ -22,6 +22,7 @@
         "drupal/core-recipe-unpack": "^11.3",
         "drupal/core-recommended": "^11.3",
         "drupal/custom_field": "^4.0",
+        "drupal/facets": "^3.0",
         "drupal/field_validation": "^3.0@beta",
         "drupal/gin": "^5.0",
         "drupal/gin_toolbar": "^3.0",
@@ -29,6 +30,10 @@
         "drupal/migrate_tools": "^6.1",
         "drupal/pathauto": "^1.14",
         "drupal/redirect": "^1.12",
+        "drupal/search_api": "^1.40",
+        "drupal/search_api_autocomplete": "^1.11",
+        "drupal/search_api_block": "^1.2",
+        "drupal/search_api_db": "^1.40",
         "drupal/smart_date": "^4.2",
         "drush/drush": "^13.7"
     },

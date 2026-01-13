@@ -4,10 +4,11 @@ status: true
 dependencies:
   config:
     - filter.format.basic_html
+    - search_api_autocomplete.search.recipe_search
   module:
     - filter
     - media
-    - search
+    - search_api_autocomplete
     - shortcut
     - system
 _core:
@@ -19,6 +20,6 @@ is_admin: false
 permissions:
   - 'access content'
   - 'access shortcuts'
-  - 'search content'
+  - 'use search_api_autocomplete for recipe_search'
   - 'use text format basic_html'
   - 'view media'

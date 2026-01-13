@@ -8,7 +8,6 @@
 use Drupal\Component\Utility\Html;
 use Drupal\Core\Form\FormStateInterface;
 use Drupal\Core\StringTranslation\ByteSizeMarkup;
-use Drupal\search\SearchPageInterface;
 use Drupal\views\Form\ViewsForm;
 use Drupal\Core\Render\Element;
 
@@ -112,18 +111,7 @@ function umami_preprocess_breadcrumb(&$variables): void {
   // We are creating a variable for the Current Page Title, to allow us to print
   // it after the breadcrumbs loop has run.
   $route_match = \Drupal::routeMatch();
-  // Search page titles aren't resolved using the title_resolver service - it
-  // will always return 'Search' instead of 'Search for [term]', which would
-  // give us a breadcrumb of Home >> Search >> Search.
-  // @todo Revisit after https://www.drupal.org/project/drupal/issues/2359901
-  // @todo Revisit after https://www.drupal.org/project/drupal/issues/2403359
-  $entity = $route_match->getParameter('entity');
-  if ($entity instanceof SearchPageInterface) {
-    $variables['current_page_title'] = $entity->getPlugin()->suggestedTitle();
-  }
-  else {
-    $variables['current_page_title'] = \Drupal::service('title_resolver')->getTitle(\Drupal::request(), $route_match->getRouteObject());
-  }
+  $variables['current_page_title'] = \Drupal::service('title_resolver')->getTitle(\Drupal::request(), $route_match->getRouteObject());
   // Since we are printing the 'Current Page Title', add the URL cache context.
   // If we don't, then we might end up with something like
   // "Home > Articles" on the Recipes page, which should read "Home > Recipes".
@@ -138,10 +126,33 @@ function umami_preprocess_menu_local_task(&$variables): void {
 }
 
 /**
- * Implements hook_form_FORM_ID_alter() for search_block_form.
+ * Implements hook_form_FORM_ID_alter() for search_api_form.
+ *
+ * Adds Search API Autocomplete to the Search API Block form.
  */
-function umami_form_search_block_form_alter(&$form, FormStateInterface $form_state): void {
-  $form['keys']['#attributes']['placeholder'] = t('Search by keyword, ingredient, dish');
+function umami_form_search_api_form_alter(&$form, FormStateInterface $form_state): void {
+  // Add autocomplete if the module is enabled.
+  if (\Drupal::moduleHandler()->moduleExists('search_api_autocomplete')) {
+    // Load the recipe_search view to get the search plugin ID.
+    $view = \Drupal::service('entity_type.manager')
+      ->getStorage('view')
+      ->load('recipe_search');
+
+    if ($view) {
+      $plugin_id = 'views:' . $view->id();
+
+      // Load the search API autocomplete entity based on the plugin ID.
+      $search_storage = \Drupal::entityTypeManager()
+        ->getStorage('search_api_autocomplete_search');
+      $search = $search_storage->loadBySearchPlugin($plugin_id);
+
+      // If autocomplete is enabled, alter the search field.
+      if ($search && $search->status() && isset($form['search'])) {
+        \Drupal::service('search_api_autocomplete.helper')
+          ->alterElement($form['search'], $search);
+      }
+    }
+  }
 }
 
 /**

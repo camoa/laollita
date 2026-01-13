@@ -50,6 +50,11 @@ prompt: |
   - Translate the action verbs and instructions
   - Preserve any culturally-specific method names that don't have direct equivalents
 
+  For Recipe Instructions:
+  - Preserve the <ol><li>...</li></ol> HTML structure exactly
+  - Each step must remain in its own <li> element
+  - Do not merge multiple steps into a single <li>
+
   For Taxonomy Terms (Single Words):
   - Translate according to their culinary context
   - Cooking units must be translated as measurement/container nouns, not verbs
