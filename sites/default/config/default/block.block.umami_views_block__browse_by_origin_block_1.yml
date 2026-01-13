@@ -1,0 +1,24 @@
+uuid: 5dc99364-a7ca-4f16-bb1b-9275c52f70de
+langcode: es
+status: true
+dependencies:
+  config:
+    - views.view.browse_by_origin
+  module:
+    - views
+  theme:
+    - umami
+id: umami_views_block__browse_by_origin_block_1
+theme: umami
+region: banner_top
+weight: -10
+provider: null
+plugin: 'views_block:browse_by_origin-block_1'
+settings:
+  id: 'views_block:browse_by_origin-block_1'
+  label: ''
+  label_display: visible
+  provider: views
+  views_label: ''
+  items_per_page: null
+visibility: {  }

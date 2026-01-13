@@ -6,6 +6,7 @@ dependencies:
     - facets.facet.origin_region
   module:
     - facets
+    - system
   theme:
     - umami
 id: umami_facet_origin_region

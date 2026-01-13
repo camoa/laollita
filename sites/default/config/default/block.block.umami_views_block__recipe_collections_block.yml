@@ -13,7 +13,7 @@ _core:
 id: umami_views_block__recipe_collections_block
 theme: umami
 region: content_bottom
-weight: 0
+weight: -11
 provider: null
 plugin: 'views_block:recipe_collections-block'
 settings:

@@ -17,7 +17,7 @@ provider: null
 plugin: 'block_content:1ff7c9bb-bdf4-4164-8b49-b7dadf77a237'
 settings:
   id: 'block_content:1ff7c9bb-bdf4-4164-8b49-b7dadf77a237'
-  label: 'A Note on Accuracy'
+  label: 'Una Nota sobre la Precisión'
   label_display: visible
   provider: block_content
   view_mode: full
