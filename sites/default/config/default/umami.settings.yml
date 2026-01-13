@@ -5,8 +5,8 @@ features:
   favicon: 1
 logo:
   use_default: 0
-  path: 'public://freepik__background__10616.png'
+  path: themes/custom/umami/images/svg/laollita_logo.png
 favicon:
   use_default: 0
-  path: 'public://saucepan_395627.png'
+  path: themes/custom/umami/images/svg/laollita_favicon.png
   mimetype: image/png
