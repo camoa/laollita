@@ -23,7 +23,6 @@ img, video, iframe, table {
    ========================================================================== */
 
 /* Cards stack vertically on mobile with comfortable spacing */
-.view-promoted-items .view-content,
 .view-frontpage .view-content {
   display: grid;
   grid-template-columns: 1fr;
@@ -33,7 +32,6 @@ img, video, iframe, table {
 
 /* Two columns only on larger screens */
 @media screen and (min-width: 40rem) {
-  .view-promoted-items .view-content,
   .view-frontpage .view-content {
     grid-template-columns: repeat(2, 1fr);
     padding: 0;

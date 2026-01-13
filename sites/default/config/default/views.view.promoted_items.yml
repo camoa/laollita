@@ -4,6 +4,7 @@ status: true
 dependencies:
   config:
     - core.entity_view_mode.node.card_common
+    - core.entity_view_mode.node.card_common_alt
     - node.type.recipe
   module:
     - node
@@ -415,6 +416,36 @@ display:
         - 'user.node_grants:view'
         - user.permissions
       tags: {  }
+  attachment_2:
+    id: attachment_2
+    display_title: 'Allegato 2'
+    display_plugin: attachment
+    position: 3
+    display_options:
+      display_extenders: {  }
+    cache_metadata:
+      max-age: -1
+      contexts:
+        - 'languages:language_content'
+        - 'languages:language_interface'
+        - 'user.node_grants:view'
+        - user.permissions
+      tags: {  }
+  attachment_3:
+    id: attachment_3
+    display_title: 'Allegato 3'
+    display_plugin: attachment
+    position: 4
+    display_options:
+      display_extenders: {  }
+    cache_metadata:
+      max-age: -1
+      contexts:
+        - 'languages:language_content'
+        - 'languages:language_interface'
+        - 'user.node_grants:view'
+        - user.permissions
+      tags: {  }
   block_1:
     id: block_1
     display_title: 'Block: Sticky Recipes'
@@ -486,10 +517,25 @@ display:
         operator: AND
         groups:
           1: AND
+      style:
+        type: grid_responsive
+        options:
+          uses_fields: false
+          columns: 4
+          cell_min_width: 200
+          grid_gutter: 10
+          alignment: horizontal
+      row:
+        type: 'entity:node'
+        options:
+          relationship: none
+          view_mode: card
       defaults:
         title: false
         css_class: false
         pager: false
+        style: false
+        row: false
         filters: false
         filter_groups: false
       css_class: view-promoted-items--single

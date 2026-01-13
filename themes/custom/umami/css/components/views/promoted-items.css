@@ -11,8 +11,6 @@
 }
 
 .view-promoted-items--single {
-  display: grid;
-  gap: 14px;
   padding-block: 1rem 2rem;
 }
 /* Small */
@@ -20,13 +18,6 @@
   /* 480px */
   .view-promoted-items--single {
     padding-block: 2rem 3rem;
-  }
-}
-/* Large */
-@media screen and (min-width: 60rem) {
-  /* 960px */
-  .view-promoted-items--single {
-    grid-template-columns: repeat(2, 1fr);
   }
 }
 .view-promoted-items--double .view-content {

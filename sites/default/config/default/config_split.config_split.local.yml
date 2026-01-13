@@ -10,7 +10,8 @@ stackable: false
 no_patching: false
 storage: folder
 folder: sites/default/config/envs/local
-module: {  }
+module:
+  stage_file_proxy: 0
 theme: {  }
 complete_list:
   - system.performance

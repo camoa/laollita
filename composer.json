@@ -37,6 +37,7 @@
         "drupal/search_api_block": "^1.2",
         "drupal/search_api_db": "^1.40",
         "drupal/smart_date": "^4.2",
+        "drupal/stage_file_proxy": "^3.1",
         "drush/drush": "^13.7",
         "symfony/cache": "^6.4"
     },
