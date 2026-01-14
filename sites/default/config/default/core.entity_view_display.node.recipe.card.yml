@@ -9,6 +9,8 @@ dependencies:
     - field.field.node.recipe.field_ingredients
     - field.field.node.recipe.field_media_image
     - field.field.node.recipe.field_number_of_servings
+    - field.field.node.recipe.field_origin_country
+    - field.field.node.recipe.field_origin_region
     - field.field.node.recipe.field_preparation_time
     - field.field.node.recipe.field_recipe_category
     - field.field.node.recipe.field_recipe_instruction
@@ -42,16 +44,36 @@ content:
     third_party_settings: {  }
     weight: 2
     region: content
+  field_origin_country:
+    type: entity_reference_label
+    label: hidden
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  field_origin_region:
+    type: entity_reference_label
+    label: hidden
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 1
+    region: content
 hidden:
   content_moderation_control: true
+  field_cooking_notes: true
   field_cooking_time: true
   field_ingredients: true
   field_number_of_servings: true
   field_preparation_time: true
   field_recipe_category: true
+  field_recipe_ingredients: true
   field_recipe_instruction: true
+  field_source: true
   field_summary: true
   field_tags: true
   langcode: true
   layout_builder__layout: true
   links: true
+  search_api_excerpt: true

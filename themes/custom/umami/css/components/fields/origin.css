@@ -41,3 +41,21 @@
   padding-right: 0.6rem;
   font-weight: 700;
 }
+
+/* Card view mode - smaller, inline origin display */
+.node--view-mode-card .field--name-field-origin-country,
+.node--view-mode-card .field--name-field-origin-region {
+  display: inline;
+  margin-bottom: 0;
+  font-size: 0.85rem;
+  color: #666;
+}
+
+.node--view-mode-card .field--name-field-origin-country::after {
+  content: ', ';
+}
+
+.node--view-mode-card .field--name-field-origin-region:empty,
+.node--view-mode-card .field--name-field-origin-country:last-child::after {
+  content: none;
+}

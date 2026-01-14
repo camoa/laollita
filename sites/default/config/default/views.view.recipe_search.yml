@@ -4,6 +4,7 @@ status: true
 dependencies:
   config:
     - search_api.index.recipes
+    - system.menu.main
   module:
     - search_api
     - user
@@ -309,6 +310,15 @@ display:
     display_options:
       display_extenders: {  }
       path: search/recipes
+      menu:
+        type: normal
+        title: Recipes
+        description: 'Search and browse recipes'
+        weight: 30
+        expanded: false
+        menu_name: main
+        parent: ''
+        context: '0'
       metatags:
         robots: 'noindex, follow'
     cache_metadata:

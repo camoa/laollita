@@ -1,0 +1,46 @@
+label: 'Buscar Recetas'
+description: 'Buscar recetas con filtros'
+display:
+  default:
+    display_title: 'Por defecto'
+    display_options:
+      title: 'Buscar Recetas'
+      pager:
+        options:
+          tags:
+            next: 'Siguiente ›'
+            previous: '‹ Anterior'
+            first: '« Primera'
+            last: 'Última »'
+          expose:
+            items_per_page_label: 'Elementos por página'
+            items_per_page_options_all_label: '- Todo -'
+            offset_label: Desplazamiento
+      exposed_form:
+        options:
+          submit_button: Buscar
+          reset_button_label: Restablecer
+          exposed_sorts_label: 'Ordenar por'
+          sort_asc_label: Asc
+          sort_desc_label: Desc
+      empty:
+        area_text_custom:
+          content: 'No se encontraron recetas que coincidan con su búsqueda.'
+      sorts:
+        search_api_relevance:
+          expose:
+            label: Relevancia
+      filters:
+        search_api_fulltext:
+          expose:
+            label: Buscar
+            placeholder: 'Buscar recetas...'
+      header:
+        result:
+          content: 'Mostrando @start - @end de @total recetas'
+  page_1:
+    display_title: Página
+    display_options:
+      menu:
+        title: Recetas
+        description: 'Buscar y explorar recetas'
