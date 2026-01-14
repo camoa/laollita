@@ -88,7 +88,7 @@ class TranslateRecipeToEnglish extends ActionBase implements ContainerFactoryPlu
     TextTranslatorInterface $text_translator,
     MessengerInterface $messenger,
     LanguageManagerInterface $language_manager,
-    EntityTypeManagerInterface $entity_type_manager
+    EntityTypeManagerInterface $entity_type_manager,
   ) {
     parent::__construct($configuration, $plugin_id, $plugin_definition);
     $this->textExtractor = $text_extractor;
@@ -196,7 +196,7 @@ class TranslateRecipeToEnglish extends ActionBase implements ContainerFactoryPlu
   /**
    * {@inheritdoc}
    */
-  public function access($object, AccountInterface $account = NULL, $return_as_object = FALSE) {
+  public function access($object, ?AccountInterface $account = NULL, $return_as_object = FALSE) {
     /** @var \Drupal\node\NodeInterface $object */
     $result = $object->access('update', $account, TRUE)
       ->andIf($object->status->access('edit', $account, TRUE));

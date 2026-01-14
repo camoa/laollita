@@ -50,3 +50,4 @@ drush/*.local.yml
 .env.local
 .env.*.local
 sites/default/settings.local.php
+.reports/
