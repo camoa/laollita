@@ -1,0 +1,9 @@
+name: 'Recetas Views'
+type: module
+description: 'Custom views alterations for Recetas site'
+core_version_requirement: ^10 || ^11
+package: Recetas
+dependencies:
+  - drupal:views
+  - views_bulk_operations:views_bulk_operations
+  - ai_translate:ai_translate

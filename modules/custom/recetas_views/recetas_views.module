@@ -1,0 +1,28 @@
+<?php
+
+/**
+ * @file
+ * Custom views alterations for Recetas site.
+ */
+
+use Drupal\views\ViewExecutable;
+use Drupal\views\Plugin\views\query\QueryPluginBase;
+
+/**
+ * Implements hook_views_query_alter().
+ */
+function recetas_views_views_query_alter(ViewExecutable $view, QueryPluginBase $query) {
+  // Only alter the untranslated_recipes view.
+  if ($view->id() !== 'untranslated_recipes') {
+    return;
+  }
+
+  // Add a subquery to exclude recipes that have English translations.
+  $subquery = \Drupal::database()->select('node_field_data', 'nfd_en');
+  $subquery->fields('nfd_en', ['nid']);
+  $subquery->condition('nfd_en.type', 'recipe');
+  $subquery->condition('nfd_en.langcode', 'en');
+
+  // Add the NOT IN condition to the main query.
+  $query->addWhere(1, 'node_field_data.nid', $subquery, 'NOT IN');
+}
