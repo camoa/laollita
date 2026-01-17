@@ -3,6 +3,7 @@ langcode: en
 status: true
 dependencies:
   config:
+    - field.field.node.shopping_list.field_number_of_servings
     - field.field.node.shopping_list.field_recipes
     - field.field.node.shopping_list.field_shopping_list
     - node.type.shopping_list
@@ -20,6 +21,13 @@ content:
     weight: 10
     region: content
     settings: {  }
+    third_party_settings: {  }
+  field_number_of_servings:
+    type: number
+    weight: 25
+    region: content
+    settings:
+      placeholder: ''
     third_party_settings: {  }
   field_recipes:
     type: entity_reference_autocomplete
@@ -91,6 +99,11 @@ content:
     settings:
       size: 60
       placeholder: ''
+    third_party_settings: {  }
+  translation:
+    weight: 10
+    region: content
+    settings: {  }
     third_party_settings: {  }
   uid:
     type: entity_reference_autocomplete

@@ -87,9 +87,15 @@ class ShoppingListController extends ControllerBase {
       return $this->redirect('entity.node.canonical', ['node' => $node->id()]);
     }
 
+    // Get desired servings from shopping list.
+    $desired_servings = 4;
+    if ($node->hasField('field_number_of_servings') && !$node->get('field_number_of_servings')->isEmpty()) {
+      $desired_servings = (int) $node->get('field_number_of_servings')->value;
+    }
+
     // Extract ingredients from recipes in current language.
     $all_ingredients = [];
-    $recipe_titles = [];
+    $recipe_data = [];
 
     foreach ($recipes as $recipe) {
       // Get translation of recipe for current language.
@@ -100,7 +106,16 @@ class ShoppingListController extends ControllerBase {
         $translated_recipe = $recipe;
       }
 
-      $recipe_titles[] = $translated_recipe->getTitle();
+      // Get recipe's default servings.
+      $recipe_servings = 4;
+      if ($translated_recipe->hasField('field_number_of_servings') && !$translated_recipe->get('field_number_of_servings')->isEmpty()) {
+        $recipe_servings = (int) $translated_recipe->get('field_number_of_servings')->value;
+      }
+
+      $recipe_data[] = [
+        'title' => $translated_recipe->getTitle(),
+        'default_servings' => $recipe_servings,
+      ];
 
       // Extract ingredients.
       if (!$translated_recipe->hasField('field_recipe_ingredients') || $translated_recipe->get('field_recipe_ingredients')->isEmpty()) {
@@ -121,6 +136,7 @@ class ShoppingListController extends ControllerBase {
 
         $all_ingredients[] = [
           'recipe' => $translated_recipe->getTitle(),
+          'recipe_default_servings' => $recipe_servings,
           'amount' => $item['amount'] ?? '',
           'unit' => $unit_name,
           'ingredient' => $item['ingredient'] ?? '',
@@ -136,7 +152,8 @@ class ShoppingListController extends ControllerBase {
     // Build context for AI agent.
     $context = [
       'language' => $current_language,
-      'recipes' => $recipe_titles,
+      'desired_servings' => $desired_servings,
+      'recipes' => $recipe_data,
       'ingredients' => $all_ingredients,
       'total_recipes' => count($recipes),
     ];

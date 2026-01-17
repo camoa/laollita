@@ -1,0 +1,25 @@
+uuid: e416ecc6-2b92-4722-a231-75f95f508ac8
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_number_of_servings
+    - node.type.shopping_list
+id: node.shopping_list.field_number_of_servings
+field_name: field_number_of_servings
+entity_type: node
+bundle: shopping_list
+label: 'Number of Servings'
+description: 'How many servings should this shopping list make? Ingredients will be scaled accordingly.'
+required: false
+translatable: false
+default_value:
+  -
+    value: 4
+default_value_callback: ''
+settings:
+  min: 1
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: integer

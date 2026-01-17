@@ -43,3 +43,9 @@ msgstr "Recetas"
 
 msgid "Shopping List"
 msgstr "Lista de Compras"
+
+msgid "Number of Servings"
+msgstr "Número de Porciones"
+
+msgid "How many servings should this shopping list make? Ingredients will be scaled accordingly."
+msgstr "¿Para cuántas porciones debe ser esta lista de compras? Los ingredientes se ajustarán en consecuencia."
