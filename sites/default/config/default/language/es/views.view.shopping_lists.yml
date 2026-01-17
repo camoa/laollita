@@ -1,0 +1,47 @@
+display:
+  default:
+    display_options:
+      fields:
+        field_shopping_list:
+          empty: 'Aún no se ha generado'
+          label: Estado
+          alter:
+            text: Generada
+          separator: ', '
+        title:
+          separator: ', '
+        created:
+          label: Creado
+          separator: ', '
+        field_recipes:
+          label: Recetas
+          separator: ', '
+      title: 'Listas de Compras'
+      pager:
+        options:
+          tags:
+            next: 'Siguiente >'
+            previous: '‹ Anterior'
+            first: '« Primero'
+            last: 'Último »'
+          expose:
+            items_per_page_label: 'Elementos por página'
+            items_per_page_options_all_label: '- Todo -'
+            offset_label: Desplazamiento
+      exposed_form:
+        options:
+          submit_button: Aplicar
+      empty:
+        area_text_custom:
+          content: '<p>Aún no has creado ninguna lista de compras.</p>'
+      header:
+        area_text_custom:
+          content: '<a href="/node/add/shopping_list" class="button button--primary button--action" style="min-height: 48px; padding: 12px 24px; font-size: 18px; margin-bottom: 2rem; display: inline-block;">Crear Nueva Lista de Compras</a>'
+    display_title: 'Por defecto'
+  page_1:
+    display_title: Página
+    display_options:
+      menu:
+        title: 'Listas de Compras'
+        description: 'Ver y gestionar sus listas de compras'
+label: 'Listas de Compras'

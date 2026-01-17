@@ -1,0 +1,65 @@
+display:
+  default:
+    display_options:
+      exposed_form:
+        options:
+          submit_button: Filtra
+          reset_button_label: Ripristina
+          exposed_sorts_label: 'Ordina per'
+          sort_asc_label: Asc
+          sort_desc_label: Disc
+      pager:
+        options:
+          expose:
+            items_per_page_label: 'Voci per pagina'
+            items_per_page_options_all_label: '- Tutto -'
+            offset_label: Scostamento
+          tags:
+            previous: '‹ precedente'
+            next: 'seguente ›'
+            first: '« prima'
+            last: 'ultima »'
+      fields:
+        media_bulk_form:
+          label: 'Aggiornamento di massa'
+          action_title: Azione
+        name:
+          separator: ', '
+        bundle:
+          separator: ', '
+        uid:
+          label: Autore
+          separator: ', '
+        status:
+          label: Stato
+          settings:
+            format_custom_true: Pubblicato
+            format_custom_false: 'Non pubblicato'
+          separator: ', '
+        publish_on:
+          label: 'Pubblica il'
+          separator: ', '
+        unpublish_on:
+          label: 'Rimuovi pubblicazione il'
+          separator: ', '
+        operations:
+          label: Operazioni
+      filters:
+        bundle:
+          expose:
+            label: Tipo
+        status:
+          expose:
+            label: Stato
+          group_info:
+            label: 'Stato pubblicazione'
+            group_items:
+              1:
+                title: Pubblicato
+              2:
+                title: 'Non pubblicato'
+        langcode:
+          expose:
+            label: Lingua
+  user_page:
+    display_title: Utente

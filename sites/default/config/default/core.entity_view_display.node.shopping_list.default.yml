@@ -1,0 +1,39 @@
+uuid: d39a661e-9084-4bee-a008-3313d6f78511
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.shopping_list.field_recipes
+    - field.field.node.shopping_list.field_shopping_list
+    - node.type.shopping_list
+  module:
+    - text
+    - user
+id: node.shopping_list.default
+targetEntityType: node
+bundle: shopping_list
+mode: default
+content:
+  field_recipes:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  field_shopping_list:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 2
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  langcode: true
+  search_api_excerpt: true

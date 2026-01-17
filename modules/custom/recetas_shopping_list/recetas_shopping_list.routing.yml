@@ -1,0 +1,12 @@
+recetas_shopping_list.generate:
+  path: '/shopping-list/{node}/generate'
+  defaults:
+    _controller: '\Drupal\recetas_shopping_list\Controller\ShoppingListController::generate'
+    _title: 'Generate Shopping List'
+  requirements:
+    _permission: 'create shopping_list content'
+    node: \d+
+  options:
+    parameters:
+      node:
+        type: entity:node

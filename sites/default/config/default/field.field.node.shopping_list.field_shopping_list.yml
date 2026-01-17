@@ -1,0 +1,22 @@
+uuid: 5bdf85f8-544f-43e3-9423-485b61f3234e
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_shopping_list
+    - node.type.shopping_list
+  module:
+    - text
+id: node.shopping_list.field_shopping_list
+field_name: field_shopping_list
+entity_type: node
+bundle: shopping_list
+label: 'Shopping List'
+description: 'The generated shopping list (managed by AI agent)'
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  allowed_formats: {  }
+field_type: text_long

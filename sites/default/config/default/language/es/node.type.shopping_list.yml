@@ -1,0 +1,3 @@
+name: 'Lista de Compras'
+description: 'Crear una lista de compras desde múltiples recetas'
+help: 'Seleccione las recetas que desea cocinar, luego genere una lista de compras consolidada.'

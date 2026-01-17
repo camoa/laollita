@@ -16,6 +16,7 @@
     ],
     "require": {
         "composer/installers": "^2.3",
+        "drupal/ai_agents": "^1.1",
         "drupal/ai_provider_anthropic": "^1.2",
         "drupal/ai_translate": "^1.3",
         "drupal/better_exposed_filters": "^7.1",
@@ -32,6 +33,7 @@
         "drupal/migrate_tools": "^6.1",
         "drupal/pathauto": "^1.14",
         "drupal/redirect": "^1.12",
+        "drupal/scheduler": "^2.2",
         "drupal/search_api": "^1.40",
         "drupal/search_api_autocomplete": "^1.11",
         "drupal/search_api_block": "^1.2",

@@ -1,0 +1,12 @@
+name: 'Recetas Shopping List'
+type: module
+description: 'Shopping list generator for multiple recipes using AI agents'
+package: Recetas
+core_version_requirement: ^11
+dependencies:
+  - node
+  - field
+  - text
+  - ai
+  - ai_agents
+  - scheduler

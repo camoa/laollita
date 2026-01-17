@@ -1,0 +1,106 @@
+<?php
+
+/**
+ * @file
+ * Contains recetas_shopping_list.module.
+ */
+
+use Drupal\Core\Access\AccessResult;
+use Drupal\Core\Entity\Display\EntityViewDisplayInterface;
+use Drupal\Core\Entity\EntityInterface;
+use Drupal\Core\Session\AccountInterface;
+use Drupal\Core\Url;
+use Drupal\node\NodeInterface;
+
+/**
+ * Implements hook_node_access().
+ *
+ * Restrict shopping list access to owner only.
+ */
+function recetas_shopping_list_node_access(NodeInterface $node, $op, AccountInterface $account) {
+  // Only apply to shopping_list nodes.
+  if ($node->bundle() !== 'shopping_list') {
+    return AccessResult::neutral();
+  }
+
+  // View operation: only owner or admin can view.
+  if ($op === 'view') {
+    // Allow admins to view all.
+    if ($account->hasPermission('administer nodes')) {
+      return AccessResult::allowed()->cachePerPermissions();
+    }
+
+    // Allow owner to view their own.
+    if ($node->getOwnerId() == $account->id()) {
+      return AccessResult::allowed()->cachePerUser()->addCacheableDependency($node);
+    }
+
+    // Deny everyone else.
+    return AccessResult::forbidden('Only the owner can view this shopping list')->cachePerUser()->addCacheableDependency($node);
+  }
+
+  // Update/delete: Drupal's own permission system handles this (edit own/delete own).
+  return AccessResult::neutral();
+}
+
+/**
+ * Implements hook_ENTITY_TYPE_presave() for node.
+ *
+ * Automatically sets unpublish date for new shopping lists.
+ */
+function recetas_shopping_list_node_presave(EntityInterface $node) {
+  // Only for shopping_list content type.
+  if ($node->bundle() !== 'shopping_list') {
+    return;
+  }
+
+  // Only set on new nodes (first save).
+  if ($node->isNew() && $node->hasField('unpublish_on') && $node->get('unpublish_on')->isEmpty()) {
+    // Auto-unpublish 7 days after creation.
+    $unpublish_date = new \DateTime();
+    $unpublish_date->modify('+7 days');
+    // Scheduler expects Unix timestamp.
+    $node->set('unpublish_on', $unpublish_date->getTimestamp());
+  }
+}
+
+/**
+ * Implements hook_node_view_alter().
+ *
+ * Adds Generate/Update Shopping List button to shopping list nodes.
+ */
+function recetas_shopping_list_node_view_alter(&$build, NodeInterface $node, EntityViewDisplayInterface $display) {
+  // Only for shopping_list nodes in default or full view mode.
+  if ($node->bundle() !== 'shopping_list') {
+    return;
+  }
+
+  // Only show in default and full view modes.
+  $allowed_modes = ['default', 'full'];
+  if (!in_array($display->getMode(), $allowed_modes)) {
+    return;
+  }
+
+  // Only show button to authenticated users.
+  if (!\Drupal::currentUser()->isAuthenticated()) {
+    return;
+  }
+
+  // Determine button label based on whether list exists.
+  $is_empty = $node->get('field_shopping_list')->isEmpty();
+  $label = $is_empty ? t('Generate Shopping List') : t('Update Shopping List');
+
+  // Add button with large touch target for accessibility.
+  $build['generate_button'] = [
+    '#type' => 'link',
+    '#title' => $label,
+    '#url' => Url::fromRoute('recetas_shopping_list.generate', [
+      'node' => $node->id(),
+    ]),
+    '#attributes' => [
+      'class' => ['button', 'button--primary', 'button--action'],
+      'style' => 'min-height: 48px; padding: 12px 24px; font-size: 18px;',
+    ],
+    '#weight' => -10,
+  ];
+}

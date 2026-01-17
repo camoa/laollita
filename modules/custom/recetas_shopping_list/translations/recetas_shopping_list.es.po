@@ -1,0 +1,45 @@
+# Spanish translation for recetas_shopping_list module
+msgid ""
+msgstr ""
+"Project-Id-Version: Recetas Shopping List\n"
+"Language: es\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+
+msgid "Create Shopping List"
+msgstr "Crear Lista de Compras"
+
+msgid "Create a shopping list from multiple recipes"
+msgstr "Crear una lista de compras desde múltiples recetas"
+
+msgid "Generate Shopping List"
+msgstr "Generar Lista de Compras"
+
+msgid "Update Shopping List"
+msgstr "Actualizar Lista de Compras"
+
+msgid "Shopping list generated successfully!"
+msgstr "¡Lista de compras generada exitosamente!"
+
+msgid "Please add at least one recipe before generating the shopping list."
+msgstr "Por favor agregue al menos una receta antes de generar la lista de compras."
+
+msgid "No valid recipes found."
+msgstr "No se encontraron recetas válidas."
+
+msgid "No ingredients found in the selected recipes."
+msgstr "No se encontraron ingredientes en las recetas seleccionadas."
+
+msgid "Failed to generate shopping list: @message"
+msgstr "Error al generar la lista de compras: @message"
+
+msgid "Select the recipes you want to include in your shopping list"
+msgstr "Seleccione las recetas que desea incluir en su lista de compras"
+
+msgid "The generated shopping list (managed by AI agent)"
+msgstr "La lista de compras generada (administrada por agente de IA)"
+
+msgid "Recipes"
+msgstr "Recetas"
+
+msgid "Shopping List"
+msgstr "Lista de Compras"

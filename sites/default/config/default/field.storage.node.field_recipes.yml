@@ -1,0 +1,19 @@
+uuid: 3befd6f7-428e-4407-82fe-5be716f17082
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: node.field_recipes
+field_name: field_recipes
+entity_type: node
+type: entity_reference
+settings:
+  target_type: node
+module: core
+locked: false
+cardinality: -1
+translatable: false
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

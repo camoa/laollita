@@ -1,0 +1,47 @@
+display:
+  default:
+    display_options:
+      fields:
+        field_shopping_list:
+          empty: 'Pas encore générée'
+          label: Statut
+          alter:
+            text: Générée
+          separator: ', '
+        title:
+          separator: ', '
+        created:
+          label: Créé
+          separator: ', '
+        field_recipes:
+          label: Recettes
+          separator: ', '
+      title: 'Listes de Courses'
+      pager:
+        options:
+          tags:
+            next: 'Suivant ›'
+            previous: '‹ Précédent'
+            first: '« Premier'
+            last: 'Dernier »'
+          expose:
+            items_per_page_label: 'Éléments par page'
+            items_per_page_options_all_label: '- Tout -'
+            offset_label: Décalage
+      exposed_form:
+        options:
+          submit_button: Appliquer
+      empty:
+        area_text_custom:
+          content: "<p>Vous n'avez pas encore créé de liste de courses.</p>"
+      header:
+        area_text_custom:
+          content: '<a href="/node/add/shopping_list" class="button button--primary button--action" style="min-height: 48px; padding: 12px 24px; font-size: 18px; margin-bottom: 2rem; display: inline-block;">Créer une Nouvelle Liste de Courses</a>'
+    display_title: 'Par défaut'
+  page_1:
+    display_title: Page
+    display_options:
+      menu:
+        title: 'Listes de Courses'
+        description: 'Voir et gérer vos listes de courses'
+label: 'Listes de Courses'

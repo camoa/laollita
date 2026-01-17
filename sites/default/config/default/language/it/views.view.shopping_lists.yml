@@ -1,0 +1,47 @@
+display:
+  default:
+    display_options:
+      fields:
+        field_shopping_list:
+          empty: 'Non ancora generata'
+          label: Stato
+          alter:
+            text: Generata
+          separator: ', '
+        title:
+          separator: ', '
+        created:
+          label: Creato
+          separator: ', '
+        field_recipes:
+          label: Ricette
+          separator: ', '
+      title: 'Liste della Spesa'
+      pager:
+        options:
+          tags:
+            next: 'Seguente ›'
+            previous: '‹ Precedente'
+            first: '« Prima'
+            last: 'Ultima »'
+          expose:
+            items_per_page_label: 'Voci per pagina'
+            items_per_page_options_all_label: '- Tutto -'
+            offset_label: Scostamento
+      exposed_form:
+        options:
+          submit_button: Applica
+      empty:
+        area_text_custom:
+          content: '<p>Non hai ancora creato nessuna lista della spesa.</p>'
+      header:
+        area_text_custom:
+          content: '<a href="/node/add/shopping_list" class="button button--primary button--action" style="min-height: 48px; padding: 12px 24px; font-size: 18px; margin-bottom: 2rem; display: inline-block;">Crea Nuova Lista della Spesa</a>'
+    display_title: Predefinito
+  page_1:
+    display_title: Pagina
+    display_options:
+      menu:
+        title: 'Liste della Spesa'
+        description: 'Visualizza e gestisci le tue liste della spesa'
+label: 'Liste della Spesa'

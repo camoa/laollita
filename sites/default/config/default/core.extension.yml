@@ -2,6 +2,8 @@ _core:
   default_config_hash: 4GIX5Esnc_umpXUBj4IIocRX7Mt5fPhm4AgXfE3E56E
 module:
   ai: 0
+  ai_agents: 0
+  ai_agents_explorer: 0
   ai_provider_anthropic: 0
   ai_translate: 0
   announcements_feed: 0
@@ -47,6 +49,7 @@ module:
   migrate: 0
   migrate_plus: 0
   migrate_tools: 0
+  modeler_api: 0
   mysql: 0
   node: 0
   options: 0
@@ -54,9 +57,11 @@ module:
   path: 0
   path_alias: 0
   recetas_migrate: 0
+  recetas_shopping_list: 0
   recetas_views: 0
   redirect: 0
   responsive_image: 0
+  scheduler: 0
   search_api: 0
   search_api_autocomplete: 0
   search_api_block: 0

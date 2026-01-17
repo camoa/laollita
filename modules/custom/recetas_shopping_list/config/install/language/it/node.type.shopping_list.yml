@@ -1,0 +1,3 @@
+name: 'Lista della Spesa'
+description: 'Crea una lista della spesa da più ricette'
+help: 'Seleziona le ricette che desideri cucinare, poi genera una lista della spesa consolidata.'

@@ -6,6 +6,9 @@ default_providers:
   chat:
     provider_id: anthropic
     model_id: claude-sonnet-4-5-20250929
+  chat_with_complex_json:
+    provider_id: anthropic
+    model_id: claude-sonnet-4-5-20250929
   translate_text:
     provider_id: chat_translation
     model_id: claude-sonnet-4-5-20250929
