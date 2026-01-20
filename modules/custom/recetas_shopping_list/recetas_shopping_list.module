@@ -5,43 +5,10 @@
  * Contains recetas_shopping_list.module.
  */
 
-use Drupal\Core\Access\AccessResult;
 use Drupal\Core\Entity\Display\EntityViewDisplayInterface;
 use Drupal\Core\Entity\EntityInterface;
-use Drupal\Core\Session\AccountInterface;
 use Drupal\Core\Url;
 use Drupal\node\NodeInterface;
-
-/**
- * Implements hook_node_access().
- *
- * Restrict shopping list access to owner only.
- */
-function recetas_shopping_list_node_access(NodeInterface $node, $op, AccountInterface $account) {
-  // Only apply to shopping_list nodes.
-  if ($node->bundle() !== 'shopping_list') {
-    return AccessResult::neutral();
-  }
-
-  // View operation: only owner or admin can view.
-  if ($op === 'view') {
-    // Allow admins to view all.
-    if ($account->hasPermission('administer nodes')) {
-      return AccessResult::allowed()->cachePerPermissions();
-    }
-
-    // Allow owner to view their own.
-    if ($node->getOwnerId() == $account->id()) {
-      return AccessResult::allowed()->cachePerUser()->addCacheableDependency($node);
-    }
-
-    // Deny everyone else.
-    return AccessResult::forbidden('Only the owner can view this shopping list')->cachePerUser()->addCacheableDependency($node);
-  }
-
-  // Update/delete: Drupal's own permission system handles this (edit own/delete own).
-  return AccessResult::neutral();
-}
 
 /**
  * Implements hook_ENTITY_TYPE_presave() for node.
