@@ -5,6 +5,26 @@
 // DDEV-created Drupal 11 settings.php from upstream default.settings.php
 
 /**
+ * Early-bootstrap bot protection for faceted search URLs.
+ *
+ * Blocks known bots from crawling faceted search combinations before Drupal
+ * bootstraps. This prevents the exponential URL explosion (crawl trap) that
+ * bots create by following every facet link combination.
+ */
+if (php_sapi_name() !== 'cli'
+  && isset($_SERVER['REQUEST_URI'])
+  && preg_match('/[?&]f(%5B|\[)\d+(%5D|\])/', $_SERVER['REQUEST_URI'])
+) {
+  $ua = $_SERVER['HTTP_USER_AGENT'] ?? '';
+  if (preg_match('/bot|crawl|spider|slurp|GPTBot|ClaudeBot|CCBot|Bytespider|ChatGPT|Google-Extended|Amazonbot|FacebookBot|PetalBot|SemrushBot|AhrefsBot|MJ12bot|DotBot|BLEXBot/i', $ua)) {
+    header('HTTP/1.1 403 Forbidden');
+    header('Content-Type: text/plain');
+    echo 'Access denied.';
+    exit;
+  }
+}
+
+/**
  * @file
  * Drupal site-specific configuration file.
  *

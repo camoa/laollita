@@ -25,6 +25,7 @@
         "drupal/core-recipe-unpack": "^11.3",
         "drupal/core-recommended": "^11.3",
         "drupal/custom_field": "^4.0",
+        "drupal/facet_bot_blocker": "^1.0",
         "drupal/facets": "^3.0",
         "drupal/field_validation": "^3.0@beta",
         "drupal/gin": "^5.0",
