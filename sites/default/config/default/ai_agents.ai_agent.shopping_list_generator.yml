@@ -1,9 +1,7 @@
 uuid: 3e6fab31-2712-407c-bc44-0fb59fc5fde7
 langcode: en
 status: true
-dependencies:
-  module:
-    - recetas_shopping_list
+dependencies: {  }
 id: shopping_list_generator
 label: 'Shopping List Generator'
 description: 'Generates consolidated shopping lists from multiple recipes by aggregating and grouping ingredients'
@@ -256,9 +254,11 @@ tool_settings: {  }
 orchestration_agent: false
 triage_agent: false
 max_loops: 3
+max_loops_message: ''
 default_information_tools: ''
 tool_usage_limits: {  }
 exclude_users_role: false
 masquerade_roles: {  }
 structured_output_enabled: false
 structured_output_schema: ''
+hostname_filter_disabled: false
