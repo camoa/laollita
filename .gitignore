@@ -51,3 +51,4 @@ drush/*.local.yml
 .env.*.local
 sites/default/settings.local.php
 .reports/
+/autoload_runtime.php
